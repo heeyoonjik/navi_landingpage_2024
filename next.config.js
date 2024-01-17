@@ -3,6 +3,12 @@
 const stylexPlugin = require("@stylexjs/nextjs-plugin");
 
 const nextConfig = {
+  rewrites: () => [
+    {
+      source: "/approved",
+      destination: "http://20.196.201.68:8080/v1/product",
+    },
+  ],
   pageExtensions: ["js", "jsx", "ts", "tsx"],
   transpilePackages: ["@stylexjs/open-props"],
   images: {
