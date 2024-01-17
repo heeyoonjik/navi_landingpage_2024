@@ -12,9 +12,9 @@ const Header_hamburger = () => {
       <path
         d="M1 1H15M1 7H15M1 13H15"
         stroke="#999999"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

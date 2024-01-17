@@ -182,7 +182,7 @@ const DiscountSection = () => {
   });
 
   const x = useTransform(scrollYProgress, [0.3, 0.8], ["0px", "-792px"]);
-  const mobileX = useTransform(scrollYProgress, [0.3, 0.8], ["0px", "-360px"]);
+  // const mobileX = useTransform(scrollYProgress, [0.3, 0.8], ["0px", "-360px"]);
 
   return (
     <section {...stylex.props(s.container)} ref={targetRef}>
@@ -213,12 +213,7 @@ const DiscountSection = () => {
         다양한 음식을 저렴하게 드실 수 있어요
       </p>
       <div {...stylex.props(s.wideContainer)}>
-        <motion.div
-          style={{
-            x: window.innerWidth < 860 ? mobileX : x,
-          }}
-          {...stylex.props(s.sliderContainer)}
-        >
+        <motion.div style={{ x }} {...stylex.props(s.sliderContainer)}>
           <div {...stylex.props(s.banner)}>
             <p {...stylex.props(s.bannerParagraph)}>
               이용가능 식당 <br />총 2407곳

@@ -19,7 +19,7 @@ const H = stylex.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+
     position: "fixed",
     zIndex: "99",
 
@@ -46,7 +46,7 @@ const H = stylex.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+
     position: "fixed",
     zIndex: "99",
     backdropFilter: "none",
@@ -59,40 +59,21 @@ const H = stylex.create({
     }`,
     transition: "all linear 0.4s 0s",
   }),
-  innerContainer: {
-    width: {
-      default: "834px",
-      "@media (max-width: 860px)": "100%",
-    },
-    display: "flex",
-    flexShrink: "0",
-    height: "100%",
-
-    flexDirection: {
-      default: "row",
-      "@media (max-width: 860px)": "column",
-    },
-    alignItems: "center",
-    justifyContent: {
-      default: "space-between",
-      "@media (max-width: 860px)": "flex-start",
-    },
-    transition: "all ease 0.4s 0s",
-  },
-
-  innerContainerMobileOpen: {
+  innerContainer: (navOpen) => ({
     backgroundColor: {
       default: "none",
-      "@media (max-width: 860px)": "white",
+      "@media (max-width: 860px)": `${navOpen ? "white" : "none"}`,
     },
     width: {
       default: "834px",
       "@media (max-width: 860px)": "100%",
     },
-
     display: "flex",
     flexShrink: "0",
-    height: "100vh",
+    height: {
+      default: "100%",
+      "@media (max-width: 860px)": `${navOpen ? "100vh" : "auto"}`,
+    },
 
     flexDirection: {
       default: "row",
@@ -104,7 +85,7 @@ const H = stylex.create({
       "@media (max-width: 860px)": "flex-start",
     },
     transition: "all ease 0.4s 0s",
-  },
+  }),
 
   headerContainer: {
     display: "flex",
@@ -119,8 +100,12 @@ const H = stylex.create({
       "@media (max-width: 860px)": "white",
     },
   },
-  navContainer: {
-    display: "flex",
+  navContainer: (navOpen) => ({
+    display: {
+      default: "flex",
+      "@media (max-width: 860px)": `${navOpen ? "flex" : "none"}`,
+    },
+
     flexDirection: {
       default: "row",
       "@media (max-width: 860px)": "column",
@@ -173,7 +158,7 @@ const H = stylex.create({
       default: "none",
       "@media (max-width: 860px)": "20px",
     },
-  },
+  }),
   logoContainer: {
     position: "relative",
     width: {
@@ -195,31 +180,40 @@ const H = stylex.create({
   whiteText: {
     color: "white",
   },
+
+  isMobile: {
+    display: {
+      default: "none",
+      "@media (max-width: 860px)": "block",
+    },
+  },
+
+  isPC: {
+    display: {
+      default: "block",
+      "@media (max-width: 860px)": "none",
+    },
+  },
+
+  cancleButton: (navOpen) => ({
+    display: {
+      default: "none",
+      "@media (max-width: 860px)": `${navOpen ? "block" : "none"}`,
+    },
+  }),
+
+  hamburgerContainer: (navOpen) => ({
+    display: {
+      default: "none",
+      "@media (max-width: 860px)": `${navOpen ? "none" : "block"}`,
+    },
+  }),
 });
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [viewportWidth, setViewportWidth] = useState<number>(0);
   const [navOpen, setNavOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.pageYOffset > 0 ? setIsScrolled(true) : setIsScrolled(false);
-    });
-  }, [isScrolled]);
-
-  useEffect(() => {
-    const resizeViewportWidth = () => {
-      setViewportWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", resizeViewportWidth);
-
-    return () => {
-      window.removeEventListener("resize", resizeViewportWidth);
-    };
-  }, []);
 
   return (
     <header
@@ -227,16 +221,13 @@ const Header = () => {
         isScrolled ? H.scrolledContainer : H.unscrolledContainer(pathname)
       )}
     >
-      <div
-        {...stylex.props(
-          window.innerWidth < 860 && navOpen
-            ? H.innerContainerMobileOpen
-            : H.innerContainer
-        )}
-      >
+      <div {...stylex.props(H.innerContainer(navOpen))}>
         <div {...stylex.props(H.headerContainer)}>
           <Link href="/">
-            <div {...stylex.props(H.logoContainer)}>
+            <div
+              {...stylex.props(H.logoContainer)}
+              onClick={() => setNavOpen(false)}
+            >
               <Image
                 src={logo_naviyam}
                 fill
@@ -245,48 +236,45 @@ const Header = () => {
               />
             </div>
           </Link>
-          {window.innerWidth < 860 && (
-            <>
-              {navOpen ? (
-                <div onClick={() => setNavOpen(false)}>
-                  <Icon_cancle />
-                </div>
-              ) : (
-                <div onClick={() => setNavOpen(true)}>
-                  <Header_hamburger />
-                </div>
-              )}
-            </>
-          )}
+          <div
+            {...stylex.props(H.cancleButton(navOpen))}
+            onClick={() => setNavOpen(false)}
+          >
+            <Icon_cancle />
+          </div>
+          <div
+            {...stylex.props(H.hamburgerContainer(navOpen))}
+            onClick={() => setNavOpen(true)}
+          >
+            <Header_hamburger />
+          </div>
         </div>
-        {!(window.innerWidth < 860 && navOpen === false) && (
-          <div {...stylex.props(H.navContainer)}>
-            <Link
-              href="/card"
-              {...stylex.props(pathname === "/card" && H.yellowText)}
-              onClick={() => setNavOpen(false)}
-            >
-              <motion.div whileHover={{ scale: 1.2 }}>급식카드</motion.div>
-            </Link>
-            <Link
-              href="/boss"
-              {...stylex.props(pathname === "/boss" && H.yellowText)}
-              onClick={() => setNavOpen(false)}
-            >
-              <motion.div whileHover={{ scale: 1.2 }}>입점 안내</motion.div>
-            </Link>
-            {/* <Link href="/team">
+        <div {...stylex.props(H.navContainer(navOpen))}>
+          <Link
+            href="/card"
+            {...stylex.props(pathname === "/card" && H.yellowText)}
+            onClick={() => setNavOpen(false)}
+          >
+            <motion.div whileHover={{ scale: 1.2 }}>급식카드</motion.div>
+          </Link>
+          <Link
+            href="/boss"
+            {...stylex.props(pathname === "/boss" && H.yellowText)}
+            onClick={() => setNavOpen(false)}
+          >
+            <motion.div whileHover={{ scale: 1.2 }}>입점 안내</motion.div>
+          </Link>
+          {/* <Link href="/team">
               <motion.div whileHover={{ scale: 1.2 }}>팀 소개</motion.div>
             </Link> */}
-            <Link
-              href="/contact"
-              {...stylex.props(pathname === "/contact" && H.yellowText)}
-              onClick={() => setNavOpen(false)}
-            >
-              <motion.div whileHover={{ scale: 1.2 }}>문의하기</motion.div>
-            </Link>
-          </div>
-        )}
+          <Link
+            href="/contact"
+            {...stylex.props(pathname === "/contact" && H.yellowText)}
+            onClick={() => setNavOpen(false)}
+          >
+            <motion.div whileHover={{ scale: 1.2 }}>문의하기</motion.div>
+          </Link>
+        </div>
       </div>
     </header>
   );

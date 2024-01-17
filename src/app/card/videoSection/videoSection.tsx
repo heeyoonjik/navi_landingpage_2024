@@ -70,7 +70,6 @@ const s = stylex.create({
   }),
   description: (textAlign) => ({
     width: "100%",
-    paddingLeft: "20px",
     color: `${fontColor.secondaryGrey}`,
     fontSize: {
       default: "25px",
@@ -79,8 +78,6 @@ const s = stylex.create({
     textAlign,
   }),
   leftAlign: {
-    width: "100%",
-    paddingLeft: "20px",
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
@@ -95,6 +92,7 @@ const s = stylex.create({
     width: "100%",
     height: "100%",
     objectFit: "cover",
+    flexShrink: "0",
     borderRadius: "20px",
   },
 
@@ -170,21 +168,21 @@ const VideoSection = () => {
           backgroundColor,
         }}
       >
-        <div {...stylex.props(s.titleInnerContainer)}>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInScaleUp}
-            transition={{
-              duration: 0.6,
-            }}
-            style={{ scale, opacity }}
-          >
-            <h2 {...stylex.props(s.sectionTitle)}>
-              급식카드를 <br /> 쉽고 편하게.
-            </h2>
-          </motion.div>
-        </div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInScaleUp}
+          transition={{
+            duration: 0.6,
+          }}
+          style={{ scale, opacity }}
+          {...stylex.props(s.leftAlign)}
+        >
+          <h2 {...stylex.props(s.sectionTitle)}>
+            급식카드를 <br /> 쉽고 편하게.
+          </h2>
+        </motion.div>
+
         <div {...stylex.props(s.cardIntroMockContainer)}>
           <Image
             src={CardIntroMock}
@@ -204,12 +202,12 @@ const VideoSection = () => {
             scale: scrollYProgress,
             opacity: scrollYProgress,
           }}
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={fadeInPopUp}
-          // transition={{
-          //   duration: 0.6,
-          // }}
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInPopUp}
+          transition={{
+            duration: 0.6,
+          }}
           {...stylex.props(s.videoContainer)}
         >
           <video

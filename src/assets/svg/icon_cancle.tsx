@@ -12,9 +12,9 @@ const Icon_cancle = () => {
       <path
         d="M1 1L13 13M13 1L1 13"
         stroke="#999999"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
