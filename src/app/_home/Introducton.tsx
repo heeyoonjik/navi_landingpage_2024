@@ -61,7 +61,7 @@ const s = stylex.create({
   },
 
   title: {
-    color: fontColor.white,
+    color: "white",
     fontSize: {
       default: "46px",
       "@media (max-width: 860px)": "20px",

@@ -45,10 +45,10 @@ const s = stylex.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: "75px",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
   },
   aContainer: {
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontSize: {
       default: "35px",
       "@media (max-width: 860px)": "20px",

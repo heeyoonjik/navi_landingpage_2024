@@ -2,7 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 
 export const fontColor = stylex.defineVars({
   white: "white",
-  primaryBlack: "#3C3C32",
+  color: "#3C3C32",
   secondaryGrey: "#7B8390",
 });
 

@@ -54,7 +54,7 @@ const I = stylex.create({
       default: "20px",
       "@media (max-width: 860px)": "10px",
     },
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     marginBottom: "20px",
   },
 
@@ -63,7 +63,7 @@ const I = stylex.create({
       default: "20px",
       "@media (max-width: 860px)": "10px",
     },
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     textDecoration: "line-through",
   },
   discountedPrice: {
@@ -72,7 +72,7 @@ const I = stylex.create({
       "@media (max-width: 860px)": "10px",
     },
     fontWeight: "bold",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
   },
 });
 

@@ -29,7 +29,7 @@ const s = stylex.create({
       default: "50px",
       "@media (max-width: 860px)": "30px",
     },
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontWeight: "bold",
     textAlign: "center",
     marginTop: "30px",

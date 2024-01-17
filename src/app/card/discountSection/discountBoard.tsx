@@ -92,7 +92,7 @@ const s = stylex.create({
       "@media (max-width: 860px)": "10px",
     },
     position: "relative",
-    color: fontColor.primaryBlack,
+    color: "#3C3C32",
     fontSize: "30px",
     filter: "drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.10))",
   },
@@ -277,7 +277,7 @@ const DiscountBoard = () => {
           <Yam />
         </div>
         <div {...stylex.props(s.firstChildParagraphContainer)}>
-          <p {...stylex.props(s.paragraph(fontColor.primaryBlack))}>
+          <p {...stylex.props(s.paragraph("#3C3C32"))}>
             첫 주문 전매뉴 <br />
             <strong>50% 할인</strong>
           </p>

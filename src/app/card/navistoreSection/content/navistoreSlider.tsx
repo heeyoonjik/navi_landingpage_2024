@@ -27,13 +27,13 @@ const s = stylex.create({
       default: "287px",
       "@media (max-width: 860px)": "50px",
     },
-    backgroundColor: `${color.navigrey}`,
+    backgroundColor: "#F3F5F7",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
   title: {
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontSize: {
       default: "56px",
       "@media (max-width: 860px)": "40px",
@@ -41,7 +41,7 @@ const s = stylex.create({
     textAlign: "center",
   },
   description: {
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     fontSize: {
       default: "30px",
       "@media (max-width: 860px)": "25px",

@@ -64,7 +64,7 @@ const s = stylex.create({
       "@media (max-width: 860px)": "190px",
     },
     fontWeight: "bold",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontSize: {
       default: "18px",
       "@media (max-width: 860px)": "13px",
@@ -93,10 +93,10 @@ const s = stylex.create({
     },
   },
   infoBusinessText: {
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
   },
   infoBusinessCopyright: {
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     marginTop: {
       default: "0px",
       "@media (max-width: 860px)": "10px",
@@ -131,7 +131,7 @@ const s = stylex.create({
       "@media (max-width: 860px)": "30px",
     },
     fontWeight: "700",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
   },
   logoContainer: {
     marginTop: "20px",

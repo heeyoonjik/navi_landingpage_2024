@@ -38,7 +38,7 @@ const s = stylex.create({
   },
   introParagraph: {
     fontWeight: "700",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     textAlign: "center",
     fontSize: {
       default: "60px",
@@ -81,7 +81,7 @@ const s = stylex.create({
       default: "50px",
       [MOBILE]: "35px",
     },
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontWeight: "700",
   },
   sectionTitleUnderLine: {
@@ -90,7 +90,7 @@ const s = stylex.create({
       default: "50px",
       "@media (max-width: 860px)": "35px",
     },
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontWeight: "700",
 
     zIndex: "1",
@@ -111,7 +111,7 @@ const s = stylex.create({
       default: "26px",
       "@media (max-width: 860px)": "20px",
     },
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
   },
 
   sectionDescriptionMobileEnd: {
@@ -130,7 +130,7 @@ const s = stylex.create({
       default: "start",
       "@media (max-width: 860px)": "end",
     },
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
   },
   marginTop: {
     marginTop: "25px",
@@ -318,7 +318,7 @@ const s = stylex.create({
       default: "23px",
       [MOBILE]: "15px",
     },
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
   },
 
   CTAButton: {
@@ -423,7 +423,7 @@ const s = stylex.create({
     borderRadius: "20px",
   },
   solutionCardTitle: {
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
 
     fontWeight: "700",
     fontSize: {
@@ -432,7 +432,7 @@ const s = stylex.create({
     },
   },
   solutionCardSubTitle: {
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontSize: {
       default: "20px",
       [MOBILE]: "12px",
@@ -440,7 +440,7 @@ const s = stylex.create({
     fontWeight: "700",
   },
   solutionCardParagraph: {
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     fontSize: "20px",
     fontWeight: "700",
   },

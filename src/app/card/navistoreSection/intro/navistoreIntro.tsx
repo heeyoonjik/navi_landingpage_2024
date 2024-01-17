@@ -86,7 +86,7 @@ const s = stylex.create({
       "@media (max-width: 860px)": "50px",
     },
     fontWeight: "700",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     textAlign: "center",
   },
   titleContainer: {

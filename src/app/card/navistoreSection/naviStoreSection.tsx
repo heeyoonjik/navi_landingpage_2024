@@ -18,7 +18,7 @@ const s = stylex.create({
       "@media (max-width: 860px)": "50px",
     },
     marginTop: "180px",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     textAlign: "center",
   },
 });

@@ -36,7 +36,7 @@ const s = stylex.create({
       default: "100px",
       "@media (max-width: 860px)": "50px",
     },
-    color: `${fontColor.white}`,
+    color: "white",
     textAlign: "center",
   },
   cardContainer: (flexDirection) => ({
@@ -58,7 +58,7 @@ const s = stylex.create({
     marginTop: "90px",
   },
   title: (textAlign) => ({
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     textAlign: {
       default: textAlign,
       "@media (max-width: 860px)": "left",
@@ -70,7 +70,7 @@ const s = stylex.create({
   }),
   description: (textAlign) => ({
     width: "100%",
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     fontSize: {
       default: "25px",
       "@media (max-width: 860px)": "20px",

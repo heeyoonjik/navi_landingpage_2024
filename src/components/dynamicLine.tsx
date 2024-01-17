@@ -7,7 +7,7 @@ import { fontColor } from "../style/tokens.stylex";
 const s = stylex.create({
   line: {
     width: "100%",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontSize: "35px",
     fontWeight: "700",
   },

@@ -45,7 +45,7 @@ const s = stylex.create({
   },
 
   description: {
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     fontSize: {
       default: "30px",
       "@media (max-width: 860px)": "20px",
@@ -96,7 +96,7 @@ const s = stylex.create({
       default: "50px",
       "@media (max-width: 860px)": "35px",
     },
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontWeight: "700",
   },
 
@@ -106,7 +106,7 @@ const s = stylex.create({
       default: "50px",
       "@media (max-width: 860px)": "35px",
     },
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontWeight: "700",
     zIndex: "1",
     "::after": {
@@ -143,7 +143,7 @@ const s = stylex.create({
   },
 
   subDescription: {
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     fontSize: {
       default: "20px",
       "@media (max-width: 860px)": "15px",

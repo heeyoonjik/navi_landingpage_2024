@@ -116,7 +116,7 @@ const s = stylex.create({
     height: "16.42px",
   },
   title: {
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontSize: {
       default: "50px",
       "@media (max-width: 860px)": "30px",
@@ -126,7 +126,7 @@ const s = stylex.create({
     marginTop: "200px",
   },
   description: {
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     fontSize: {
       default: "30px",
       "@media (max-width: 860px)": "20px",

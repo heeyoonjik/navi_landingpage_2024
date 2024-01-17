@@ -20,9 +20,7 @@ const s = stylex.create({
       default: "740px",
       "@media (max-width: 860px)": "auto",
     },
-    backgroundColor: `${
-      backgroundColor === "white" ? "white" : color.naviYellowLightest
-    } `,
+    backgroundColor: `${backgroundColor === "white" ? "white" : "#FFFDE9"} `,
     paddingTop: {
       default: "0px",
       "@media (max-width: 860px)": "65px",
@@ -61,12 +59,12 @@ const s = stylex.create({
       default: "18px",
       "@media (max-width: 860px)": "12px",
     },
-    color: `${color.naviYellowLight}`,
+    color: "#F5C242",
     fontWeight: "bold",
   },
 
   title: {
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
 
     fontSize: {
       default: "40px",
@@ -77,7 +75,7 @@ const s = stylex.create({
   },
 
   description: {
-    color: `${fontColor.secondaryGrey}`,
+    color: "#7B8390",
     fontSize: {
       default: "20px",
       "@media (max-width: 860px)": "13px",
@@ -97,7 +95,7 @@ const s = stylex.create({
     },
   },
   button: (marginLeft) => ({
-    backgroundColor: `${color.naviButtonGrey}`,
+    backgroundColor: "#E3E3E3",
     paddingLeft: "10px",
     paddingRight: "10px",
     cursor: "pointer",
@@ -108,7 +106,7 @@ const s = stylex.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: `${fontColor.primaryBlack}`,
+    color: "#3C3C32",
     fontWeight: "bold",
     borderRadius: {
       default: "8px",
