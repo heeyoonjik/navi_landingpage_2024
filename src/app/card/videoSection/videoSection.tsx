@@ -176,7 +176,7 @@ const VideoSection = () => {
             duration: 0.6,
           }}
           style={{ scale, opacity }}
-          {...stylex.props(s.leftAlign)}
+          {...stylex.props(s.titleInnerContainer)}
         >
           <h2 {...stylex.props(s.sectionTitle)}>
             급식카드를 <br /> 쉽고 편하게.

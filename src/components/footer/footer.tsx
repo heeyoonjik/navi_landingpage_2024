@@ -1,8 +1,7 @@
+"use client";
 import stylex from "@stylexjs/stylex";
 import React from "react";
-import logo_nanumvitamin from "@/assets/png/logo_nanumvitamin.png";
 import Image from "next/image";
-import { fontColor } from "../../style/tokens.stylex";
 import icon_instagram from "@/assets/png/icon_instagram.png";
 import icon_kakao from "@/assets/png/icon_kakao.png";
 import icon_naverblog from "@/assets/png/icon_naverblog.png";
