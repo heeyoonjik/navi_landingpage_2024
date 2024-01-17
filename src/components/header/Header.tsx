@@ -216,7 +216,7 @@ const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header
+    <motion.header
       {...stylex.props(
         isScrolled ? H.scrolledContainer : H.unscrolledContainer(pathname)
       )}
@@ -276,7 +276,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
