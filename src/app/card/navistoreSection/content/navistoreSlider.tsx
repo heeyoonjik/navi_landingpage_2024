@@ -139,8 +139,8 @@ const NavistoreSlider = () => {
                 itemPosition={index % 2 === 0 ? "TOP" : "BOTTOM"}
                 itemData={{
                   name: item.name,
-                  origin_price: item.origin_price,
-                  discounted_price: item.discounted_price,
+                  originPrice: item.originPrice,
+                  discountedPrice: item.discountedPrice,
                   thumbnail: item.thumbnail,
                 }}
                 decorationItem={decorationItems[index]}
@@ -158,8 +158,8 @@ const NavistoreSlider = () => {
                 itemPosition={index % 2 === 0 ? "TOP" : "BOTTOM"}
                 itemData={{
                   name: item.name,
-                  origin_price: item.origin_price,
-                  discounted_price: item.discounted_price,
+                  originPrice: item.originPrice,
+                  discountedPrice: item.discountedPrice,
                   thumbnail: item.thumbnail,
                 }}
                 decorationItem={decorationItems[index]}

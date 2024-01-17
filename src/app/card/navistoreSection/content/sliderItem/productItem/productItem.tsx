@@ -78,8 +78,8 @@ const I = stylex.create({
 
 export type ItemType = {
   name: string;
-  origin_price: number;
-  discounted_price: number;
+  originPrice: number;
+  discountedPrice: number;
   thumbnail: string;
 };
 
@@ -103,10 +103,10 @@ const ProductItem = (props: ownProps) => {
       <div {...stylex.props(I.infoContainer)}>
         <p {...stylex.props(I.itemName)}>{itemData.name}</p>
         <p {...stylex.props(I.originalPrice)}>
-          정가 {itemData.origin_price.toLocaleString()}원
+          정가 {itemData.originPrice.toLocaleString()}원
         </p>
         <p {...stylex.props(I.discountedPrice)}>
-          할인가 {itemData.discounted_price.toLocaleString()}원
+          할인가 {itemData.discountedPrice.toLocaleString()}원
         </p>
       </div>
     </div>
