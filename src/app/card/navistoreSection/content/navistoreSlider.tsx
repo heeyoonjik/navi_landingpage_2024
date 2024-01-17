@@ -102,7 +102,7 @@ const NavistoreSlider = () => {
   const getItemListAPI = async () => {
     try {
       const response = await axios.get(
-        `http://20.196.201.68:8080/v1/product/approved`,
+        `https://api.naviyam.me/v1/product/approved`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
