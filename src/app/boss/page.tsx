@@ -9,12 +9,11 @@ import section2_child from "@/../public/images/boss/boss_section2_child.png";
 import boss_yam from "@/../public/images/boss/boss_yam.png";
 
 import Image from "next/image";
-import { fontColor } from "../../style/tokens.stylex";
 import BossInstaSlider from "./slider/bossInstaSlider";
 
 import { InstagramEmbed } from "react-social-media-embed";
 
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 import "../globals.css";
 
