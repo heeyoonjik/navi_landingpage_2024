@@ -24,6 +24,10 @@ const fadeInPopUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+const metadata = {
+  title: "입점 안내",
+};
+
 const s = stylex.create({
   container: {
     width: "100vw",

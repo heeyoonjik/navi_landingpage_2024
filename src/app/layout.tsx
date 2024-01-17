@@ -21,7 +21,10 @@ export const metadata: Metadata = {
   colorScheme: "dark",
   creator: "나눔비타민",
   publisher: "나눔비타민",
-  title: "나비얌",
+  title: {
+    default: "나비얌",
+    template: "%s | 나비얌",
+  },
   description:
     "모두에게 걱정없는 한 끼가 당연해지는 그 날까지 편리한 식사 예약 서비스 플랫폼",
   openGraph: {
