@@ -184,7 +184,7 @@ const page = () => {
           >
             <div {...stylex.props(s.downloadButton)}>
               <div {...stylex.props(s.appleWrapper)}>
-                <Image src={appStore} alt="앱스토어" fill />
+                <Image src={appStore} alt="앱스토어 나비얌" fill />
               </div>
             </div>
           </a>
@@ -194,7 +194,7 @@ const page = () => {
           >
             <div {...stylex.props(s.downloadButton)}>
               <div {...stylex.props(s.playStoreWrapper)}>
-                <Image src={playStore} alt="플레이스토어" fill />
+                <Image src={playStore} alt="플레이스토어 나비얌" fill />
               </div>
             </div>
           </a>
