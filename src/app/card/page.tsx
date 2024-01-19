@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import stylex from "@stylexjs/stylex";
 import VideoSection from "./videoSection/videoSection";
 import DiscountSection from "./discountSection/discountSection";

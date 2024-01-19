@@ -61,18 +61,20 @@ const s = stylex.create({
   },
 
   title: {
+    wordBreak: "keep-all",
     color: "white",
     fontSize: {
       default: "46px",
-      "@media (max-width: 860px)": "20px",
+      "@media (max-width: 860px)": "30px",
     },
   },
 
   paragraph: {
+    wordBreak: "keep-all",
     fontWeight: "300",
     fontSize: {
       default: "24px",
-      "@media (max-width: 860px)": "12px",
+      "@media (max-width: 860px)": "20px",
     },
     color: "#E0E0E0",
     marginTop: {
@@ -116,7 +118,7 @@ const s = stylex.create({
     },
     top: {
       default: "200px",
-      "@media (max-width: 860px)": "150px",
+      "@media (max-width: 860px)": "200px",
     },
 
     width: {
@@ -134,8 +136,12 @@ const s = stylex.create({
 
   downloadButton: {
     height: "22px",
+    display: {
+      default: "none",
+      "@media (max-width: 860px)": "flex",
+    },
     backgroundColor: "#F5C242",
-    display: "flex",
+    // display: "flex",
     alignItems: "center",
     justifyContent: "center",
     border: "none",
@@ -172,14 +178,11 @@ const Introducton = () => {
           }}
         >
           <h1 {...stylex.props(s.title)}>
-            우리 동네 착한 가게와 함께하는 <br />
-            따뜻한 식사나눔 플랫폼
+            우리 동네 착한 가게와 함께하는 따뜻한 식사나눔 플랫폼
           </h1>
           <p {...stylex.props(s.paragraph)}>
-            나비얌은 결식 우려 아동과 지역 가게를 연결하여 <br />
-            사회 각층의 결식문제를 해결하고
-            <br {...stylex.props(s.lineJump)} />
-            지역 상권을 활성화합니다.
+            나비얌은 결식 우려 아동과 지역 가게를 연결하여 사회 각층의
+            결식문제를 해결하고 지역 상권을 활성화합니다.
           </p>
           <div {...stylex.props(s.downloadBoxContainer)}>
             <p>앱 다운로드</p>
@@ -188,12 +191,22 @@ const Introducton = () => {
             </div>
           </div>
           <div {...stylex.props(s.mobileDownloadContainer)}>
-            <button {...stylex.props(s.downloadButton)}>
-              <Google />
-            </button>
-            <button {...stylex.props(s.downloadButton)}>
-              <Apple />
-            </button>
+            <a
+              target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.naviclient&hl=ko&gl=US"
+            >
+              <div {...stylex.props(s.downloadButton)}>
+                <Google />
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://apps.apple.com/kr/app/%EB%82%98%EB%B9%84%EC%96%8C-%EA%B8%89%EC%8B%9D%EC%B9%B4%EB%93%9C%EB%A5%BC-%EC%89%BD%EA%B3%A0-%ED%8E%B8%ED%95%98%EA%B2%8C/id6449865025"
+            >
+              <div {...stylex.props(s.downloadButton)}>
+                <Apple />
+              </div>
+            </a>
           </div>
         </motion.div>
         <motion.div

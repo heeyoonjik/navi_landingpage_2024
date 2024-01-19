@@ -17,8 +17,8 @@ const H = stylex.create({
     },
     width: "100vw",
     display: "flex",
-    flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center",
 
     position: "fixed",
     zIndex: "99",
@@ -34,32 +34,26 @@ const H = stylex.create({
     borderBottom: "0.3px solid #E6E8EA",
     boxSizing: "border-box",
     transition: "all linear 0.4s 0s",
-    color: "black",
   },
 
   unscrolledContainer: (pathname) => ({
     height: {
       default: "70px",
-      "@media (max-width: 860px)": "100vh",
+      "@media (max-width: 860px)": "auto",
     },
     width: "100vw",
     display: "flex",
-    flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center",
 
     position: "fixed",
     zIndex: "99",
     backdropFilter: "none",
     background: "none",
     boxSizing: "border-box",
-    color: `${
-      pathname === "/" || pathname === "/contact" || pathname === "/card"
-        ? "white"
-        : "black"
-    }`,
     transition: "all linear 0.4s 0s",
   }),
-  innerContainer: (navOpen) => ({
+  innerContainer: (pathname, navOpen) => ({
     backgroundColor: {
       default: "none",
       "@media (max-width: 860px)": `${navOpen ? "white" : "none"}`,
@@ -70,10 +64,10 @@ const H = stylex.create({
     },
     display: "flex",
     flexShrink: "0",
-    height: {
-      default: "100%",
-      "@media (max-width: 860px)": `${navOpen ? "100vh" : "auto"}`,
-    },
+    // height: {
+    //   default: "100%",
+    //   "@media (max-width: 860px)": `${navOpen ? "100vh" : "auto"}`,
+    // },
 
     flexDirection: {
       default: "row",
@@ -84,7 +78,6 @@ const H = stylex.create({
       default: "space-between",
       "@media (max-width: 860px)": "flex-start",
     },
-    transition: "all ease 0.4s 0s",
   }),
 
   headerContainer: {
@@ -100,7 +93,7 @@ const H = stylex.create({
       "@media (max-width: 860px)": "white",
     },
   },
-  navContainer: (navOpen) => ({
+  navContainer: (navOpen, pathname, isScrolled) => ({
     display: {
       default: "flex",
       "@media (max-width: 860px)": `${navOpen ? "flex" : "none"}`,
@@ -140,11 +133,6 @@ const H = stylex.create({
       "@media (max-width: 860px)": "13px",
     },
     transition: "all ease 0.3s 0s",
-
-    color: {
-      default: "none",
-      "@media (max-width: 860px)": "black",
-    },
     flexShrink: 0,
     paddingLeft: {
       default: "none",
@@ -157,6 +145,13 @@ const H = stylex.create({
     paddingBottom: {
       default: "none",
       "@media (max-width: 860px)": "20px",
+    },
+
+    color: {
+      default: `${
+        isScrolled ? "black" : pathname === "/boss" ? "black" : "white"
+      }`,
+      "@media (max-width: 860px)": "black",
     },
   }),
   logoContainer: {
@@ -208,6 +203,13 @@ const H = stylex.create({
       "@media (max-width: 860px)": `${navOpen ? "none" : "block"}`,
     },
   }),
+
+  normalText: (normalColor, isScrolled) => ({
+    color: {
+      default: `${isScrolled ? "black" : normalColor}`,
+      "@media (max-width: 860px)": "black",
+    },
+  }),
 });
 
 const Header = () => {
@@ -215,13 +217,25 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const pathname = usePathname();
 
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 70 ? true : false);
+    console.log("window.scrollY : ", window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll); //clean up
+    };
+  }, []);
+
   return (
     <motion.header
       {...stylex.props(
         isScrolled ? H.scrolledContainer : H.unscrolledContainer(pathname)
       )}
     >
-      <div {...stylex.props(H.innerContainer(navOpen))}>
+      <div {...stylex.props(H.innerContainer(navOpen, pathname))}>
         <div {...stylex.props(H.headerContainer)}>
           <Link href="/">
             <div
@@ -249,7 +263,7 @@ const Header = () => {
             <Header_hamburger />
           </div>
         </div>
-        <div {...stylex.props(H.navContainer(navOpen))}>
+        <div {...stylex.props(H.navContainer(navOpen, pathname, isScrolled))}>
           <Link
             href="/card"
             {...stylex.props(pathname === "/card" && H.yellowText)}
