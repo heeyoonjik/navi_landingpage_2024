@@ -160,7 +160,7 @@ export default function Home() {
             src={home_desc1}
             quality="100"
             fill
-            alt="나비얌은 급식카드를 쉽게 이용하기 위해 만들어졌음을 설명하는 사진"
+            alt="나비얌은 급식카드를 쉽게 이용하기 위해 만들어졌음을 설명하는 사진입니다."
           />
         </motion.div>
       </DescriptionSection>
