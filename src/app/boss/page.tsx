@@ -45,7 +45,7 @@ const s = stylex.create({
     textAlign: "center",
     fontSize: {
       default: "60px",
-      "@media (max-width: 860px)": "30px",
+      [MOBILE]: "30px",
     },
   },
   greySectionContainer: {
@@ -71,7 +71,7 @@ const s = stylex.create({
   innerContainer: {
     width: {
       default: "834px",
-      "@media (max-width: 860px)": "80%",
+      [MOBILE]: "80%",
     },
 
     display: "flex",
@@ -91,7 +91,7 @@ const s = stylex.create({
     position: "relative",
     fontSize: {
       default: "50px",
-      "@media (max-width: 860px)": "35px",
+      [MOBILE]: "35px",
     },
     color: "#3C3C32",
     fontWeight: "700",
@@ -112,7 +112,7 @@ const s = stylex.create({
   sectionDescription: {
     fontSize: {
       default: "26px",
-      "@media (max-width: 860px)": "20px",
+      [MOBILE]: "20px",
     },
     color: "#7B8390",
   },
@@ -123,15 +123,15 @@ const s = stylex.create({
     alignItems: "center",
     fontSize: {
       default: "26px",
-      "@media (max-width: 860px)": "20px",
+      [MOBILE]: "20px",
     },
     justifyContent: {
       default: "flex-start",
-      "@media (max-width: 860px)": "flex-end",
+      [MOBILE]: "flex-end",
     },
     textAlign: {
       default: "start",
-      "@media (max-width: 860px)": "end",
+      [MOBILE]: "end",
     },
     color: "#7B8390",
   },
@@ -145,7 +145,7 @@ const s = stylex.create({
     justifyContent: "space-between",
     flexDirection: {
       default: "row",
-      "@media (max-width: 860px)": "column",
+      [MOBILE]: "column",
     },
   },
 
@@ -156,14 +156,14 @@ const s = stylex.create({
     justifyContent: "space-between",
     flexDirection: {
       default: "row",
-      "@media (max-width: 860px)": "column",
+      [MOBILE]: "column",
     },
   },
 
   columnLeft: {
     width: {
       default: "auto",
-      "@media (max-width: 860px)": "100%",
+      [MOBILE]: "100%",
     },
     display: "flex",
     flexDirection: "column",
@@ -174,13 +174,13 @@ const s = stylex.create({
     display: "flex",
     flexDirection: {
       default: "row",
-      "@media (max-width: 860px)": "column",
+      [MOBILE]: "column",
     },
     flexShrink: "0",
     alignItems: "center",
     marginTop: {
       default: "25px",
-      "@media (max-width: 860px)": "20px",
+      [MOBILE]: "20px",
     },
   },
   line: (width) => ({
@@ -193,11 +193,11 @@ const s = stylex.create({
     position: "relative",
     width: {
       default: "397px",
-      "@media (max-width: 860px)": "197px",
+      [MOBILE]: "197px",
     },
     height: {
       default: "529px",
-      "@media (max-width: 860px)": "263px",
+      [MOBILE]: "263px",
     },
   },
 
@@ -205,11 +205,11 @@ const s = stylex.create({
     position: "relative",
     width: {
       default: "414px",
-      "@media (max-width: 860px)": "270px",
+      [MOBILE]: "270px",
     },
     height: {
       default: "548px",
-      "@media (max-width: 860px)": "357px",
+      [MOBILE]: "357px",
     },
   },
 
@@ -219,7 +219,7 @@ const s = stylex.create({
     alignItems: "flex-end",
     marginTop: {
       default: "0px",
-      "@media (max-width: 860px)": "20px",
+      [MOBILE]: "20px",
     },
   },
 
@@ -227,11 +227,11 @@ const s = stylex.create({
     position: "relative",
     width: {
       default: "438px",
-      "@media (max-width: 860px)": "236px",
+      [MOBILE]: "236px",
     },
     height: {
       default: "596px",
-      "@media (max-width: 860px)": "320px",
+      [MOBILE]: "320px",
     },
   },
 
@@ -240,28 +240,28 @@ const s = stylex.create({
     flexDirection: "column",
     alignItems: {
       default: "flex-start",
-      "@media (max-width: 860px)": "flex-end",
+      [MOBILE]: "flex-end",
     },
     marginTop: {
       default: "0px",
-      "@media (max-width: 860px)": "20px",
+      [MOBILE]: "20px",
     },
   },
   nurseryChildImageContainer: {
     position: "relative",
     width: {
       default: "352px",
-      "@media (max-width: 860px)": "197px",
+      [MOBILE]: "197px",
     },
     height: {
       default: "264px",
-      "@media (max-width: 860px)": "148px",
+      [MOBILE]: "148px",
     },
   },
   mobileBr: {
     display: {
       default: "none",
-      "@media (max-width: 860px)": "block",
+      [MOBILE]: "block",
     },
   },
 
@@ -280,11 +280,11 @@ const s = stylex.create({
     position: "relative",
     width: {
       default: "141px",
-      "@media (max-width: 860px)": "75px",
+      [MOBILE]: "75px",
     },
     height: {
       default: "200px",
-      "@media (max-width: 860px)": "109px",
+      [MOBILE]: "109px",
     },
   },
   CTAOuterContainer: {

@@ -1,4 +1,4 @@
-import { fontColor } from ".././../style/tokens.stylex";
+"use client";
 import stylex from "@stylexjs/stylex";
 import Image from "next/image";
 import React from "react";
