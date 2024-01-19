@@ -217,7 +217,7 @@ const VideoSection = () => {
             loop
             controls={false}
           >
-            <source src="/videos/nearShop.mp4" type="video/mp4" />
+            <source src="/videos/card_certification.mp4" type="video/mp4" />
           </video>
         </motion.div>
 
@@ -309,7 +309,7 @@ const VideoSection = () => {
             loop
             controls={false}
           >
-            <source src="/videos/card_ticket.mp4" type="video/mp4" />
+            <source src="/videos/card_ticketIntro.mp4" type="video/mp4" />
           </video>
         </div>
         <motion.div

@@ -106,7 +106,7 @@ const ProductItem = (props: ownProps) => {
           정가 {itemData.originPrice.toLocaleString()}원
         </p>
         <p {...stylex.props(I.discountedPrice)}>
-          할인가 {itemData.discountedPrice.toLocaleString()}원
+          할인가 {(itemData.discountedPrice - 2000).toLocaleString()}원
         </p>
       </div>
     </div>

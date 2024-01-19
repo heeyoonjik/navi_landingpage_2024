@@ -218,12 +218,14 @@ const s = stylex.create({
 
   carContainer: {
     position: "relative",
+    flexShrink: "0",
+    top: "-45px",
     width: {
-      default: "200px",
+      default: "209px",
       "@media (max-width: 860px)": "100px",
     },
     height: {
-      default: "200px",
+      default: "209px",
       "@media (max-width: 860px)": "100px",
     },
   },

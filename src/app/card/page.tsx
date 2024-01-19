@@ -12,12 +12,6 @@ import playStore from "@/assets/png/icon_googlePlay.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import DiscountBoard from "./discountSection/discountBoard";
-import { fontColor } from "../../style/tokens.stylex";
-
-const fadeInPopUp = {
-  hidden: { opacity: 0, y: 70 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const s = stylex.create({
   container: {
