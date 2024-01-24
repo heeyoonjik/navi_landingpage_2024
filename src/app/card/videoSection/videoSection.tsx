@@ -25,7 +25,7 @@ const s = stylex.create({
   },
   titleContainer: {
     backgroundColor: "black",
-    width: "100vw",
+    width: "100%",
     height: "200vh",
     display: "flex",
     flexDirection: "column",
@@ -50,6 +50,7 @@ const s = stylex.create({
       default: flexDirection,
       "@media (max-width: 860px)": "column-reverse",
     },
+
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: "70px",
@@ -133,7 +134,6 @@ const s = stylex.create({
   titleInnerContainer: {
     position: "sticky",
     top: "40vh",
-    width: "100vw",
     overflowX: "hidden",
     height: {
       default: "500px",
@@ -141,8 +141,18 @@ const s = stylex.create({
     },
   },
   sectionTitleContainer: {
-    width: "100vw",
+    width: "100%",
     overflowX: "hidden",
+  },
+
+  introductionContainer: {
+    width: {
+      default: "834px",
+      "@media (max-width: 860px)": "80%",
+    },
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
 });
 
@@ -193,141 +203,143 @@ const VideoSection = () => {
         </div>
       </motion.div>
 
-      <div {...stylex.props(s.cardContainer("row-reverse"))}>
-        <motion.div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            scale: scrollYProgress,
-            opacity: scrollYProgress,
-          }}
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeInPopUp}
-          transition={{
-            duration: 0.6,
-          }}
-          {...stylex.props(s.videoContainer)}
-        >
-          <video
-            {...stylex.props(s.videoStyle)}
-            autoPlay
-            muted
-            loop
-            controls={false}
+      <div {...stylex.props(s.introductionContainer)}>
+        <div {...stylex.props(s.cardContainer("row-reverse"))}>
+          <motion.div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              scale: scrollYProgress,
+              opacity: scrollYProgress,
+            }}
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInPopUp}
+            transition={{
+              duration: 0.6,
+            }}
+            {...stylex.props(s.videoContainer)}
           >
-            <source src="/videos/card_certification.mp4" type="video/mp4" />
-          </video>
-        </motion.div>
+            <video
+              {...stylex.props(s.videoStyle)}
+              autoPlay
+              muted
+              loop
+              controls={false}
+            >
+              <source src="/videos/card_certification.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeInPopUp}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.6,
-          }}
-          {...stylex.props(s.leftAlign)}
-        >
-          <h3 {...stylex.props(s.title("left"))}>
-            급식카드 <br /> 간편하게 인증하고
-          </h3>
-          <p {...stylex.props(s.description("start"))}>
-            사진 촬영 한 번이면 끝나요
-          </p>
-        </motion.div>
-      </div>
-
-      <div {...stylex.props(s.cardContainer("row"))}>
-        <div {...stylex.props(s.videoContainer)}>
-          <video
-            {...stylex.props(s.videoStyle)}
-            autoPlay
-            muted
-            loop
-            controls={false}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInPopUp}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+            }}
+            {...stylex.props(s.leftAlign)}
           >
-            <source src="/videos/nearShop.mp4" type="video/mp4" />
-          </video>
+            <h3 {...stylex.props(s.title("left"))}>
+              급식카드 <br /> 간편하게 인증하고
+            </h3>
+            <p {...stylex.props(s.description("start"))}>
+              사진 촬영 한 번이면 끝나요
+            </p>
+          </motion.div>
         </div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeInPopUp}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.6,
-          }}
-        >
-          <h3 {...stylex.props(s.title("right"))}>
-            앱에서 내 주변 <br /> 이용 가능 식당 확인하고
-          </h3>
-          <p {...stylex.props(s.description("right"))}>
-            더 이상 거절당하거나 눈치 볼 일 없어요
-          </p>
-        </motion.div>
-      </div>
 
-      <div {...stylex.props(s.cardContainer("row-reverse"))}>
-        <div {...stylex.props(s.videoContainer)}>
-          <video
-            {...stylex.props(s.videoStyle)}
-            autoPlay
-            muted
-            loop
-            controls={false}
+        <div {...stylex.props(s.cardContainer("row"))}>
+          <div {...stylex.props(s.videoContainer)}>
+            <video
+              {...stylex.props(s.videoStyle)}
+              autoPlay
+              muted
+              loop
+              controls={false}
+            >
+              <source src="/videos/nearShop.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInPopUp}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+            }}
           >
-            <source src="/videos/card_buy.mp4" type="video/mp4" />
-          </video>
+            <h3 {...stylex.props(s.title("right"))}>
+              앱에서 내 주변 <br /> 이용 가능 식당 확인하고
+            </h3>
+            <p {...stylex.props(s.description("right"))}>
+              더 이상 거절당하거나 눈치 볼 일 없어요
+            </p>
+          </motion.div>
         </div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInPopUp}
-          transition={{
-            duration: 0.6,
-          }}
-        >
-          <h3 {...stylex.props(s.title("left"))}>
-            간편결제로 <br /> 식권 티켓 구매하고
-          </h3>
-          <p {...stylex.props(s.description("start"))}>
-            다양한 할인 혜택으로 저렴하게 구매 가능해요
-          </p>
-        </motion.div>
-      </div>
 
-      <div {...stylex.props(s.cardContainer("row"))}>
-        <div {...stylex.props(s.videoContainer)}>
-          <video
-            {...stylex.props(s.videoStyle)}
-            autoPlay
-            muted
-            loop
-            controls={false}
+        <div {...stylex.props(s.cardContainer("row-reverse"))}>
+          <div {...stylex.props(s.videoContainer)}>
+            <video
+              {...stylex.props(s.videoStyle)}
+              autoPlay
+              muted
+              loop
+              controls={false}
+            >
+              <source src="/videos/card_buy.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInPopUp}
+            transition={{
+              duration: 0.6,
+            }}
           >
-            <source src="/videos/card_ticketIntro.mp4" type="video/mp4" />
-          </video>
+            <h3 {...stylex.props(s.title("left"))}>
+              간편결제로 <br /> 식권 티켓 구매하고
+            </h3>
+            <p {...stylex.props(s.description("start"))}>
+              다양한 할인 혜택으로 저렴하게 구매 가능해요
+            </p>
+          </motion.div>
         </div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeInPopUp}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.6,
-          }}
-        >
-          <h3 {...stylex.props(s.title("right"))}>
-            드시고 싶을 때 <br /> 사장님께 보여드리세요
-          </h3>
-          <p {...stylex.props(s.description("end"))}>
-            급식카드 대신 모바일 티켓만 보여드리세요
-          </p>
-        </motion.div>
+
+        <div {...stylex.props(s.cardContainer("row"))}>
+          <div {...stylex.props(s.videoContainer)}>
+            <video
+              {...stylex.props(s.videoStyle)}
+              autoPlay
+              muted
+              loop
+              controls={false}
+            >
+              <source src="/videos/card_ticketIntro.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInPopUp}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <h3 {...stylex.props(s.title("right"))}>
+              드시고 싶을 때 <br /> 사장님께 보여드리세요
+            </h3>
+            <p {...stylex.props(s.description("end"))}>
+              급식카드 대신 모바일 티켓만 보여드리세요
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

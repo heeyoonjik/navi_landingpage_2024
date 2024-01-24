@@ -17,7 +17,7 @@ const fadeIn = {
 
 const s = stylex.create({
   container: {
-    width: "100vw",
+    width: "100%",
     height: {
       default: "100vh",
       "@media (max-width: 860px)": "55vh",

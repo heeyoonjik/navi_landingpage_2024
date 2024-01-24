@@ -11,7 +11,7 @@ import Logo_naviyam_yellow from "@/assets/svg/logo_naviyam_yellow";
 const s = stylex.create({
   container: {
     marginTop: "100px",
-    width: "100vw",
+    width: "100%",
     height: {
       default: "400px",
       "@media (max-width: 860px)": "350px",
@@ -24,7 +24,7 @@ const s = stylex.create({
   innerContainer: {
     width: {
       default: "834px",
-      "@media (max-width: 860px)": "100vw",
+      "@media (max-width: 860px)": "100%",
     },
     display: "flex",
 

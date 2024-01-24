@@ -15,7 +15,7 @@ import DiscountBoard from "./discountSection/discountBoard";
 
 const s = stylex.create({
   container: {
-    width: "100vw",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -26,10 +26,7 @@ const s = stylex.create({
   },
   innerContainer: {
     position: "relative",
-    width: {
-      default: "834px",
-      "@media (max-width: 860px)": "100%",
-    },
+    width: "100%",
     height: "100%",
     display: "flex",
     flexDirection: "column",

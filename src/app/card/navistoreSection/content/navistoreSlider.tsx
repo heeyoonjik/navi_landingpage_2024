@@ -8,20 +8,20 @@ import SliderItem from "./sliderItem/sliderItem";
 import { decorationItems } from "./decorationItemData";
 
 const infiniteAnimation1 = stylex.keyframes({
-  "0%": { transform: "translateX(0%)" },
+  "0%": { transform: "translateX(0)" },
   "50%": { transform: "translateX(-100%)" },
   "50.001%": { transform: "translateX(100%)" },
-  "100%": { transform: "translateX(0%)" },
+  "100%": { transform: "translateX(0)" },
 });
 
 const infiniteAnimation2 = stylex.keyframes({
-  "0%": { transform: "translateX(0%)" },
+  "0%": { transform: "translateX(0)" },
   "100%": { transform: "translateX(-200%)" },
 });
 
 const s = stylex.create({
   container: {
-    width: "100vw",
+    width: "100%",
     paddingTop: "87px",
     marginTop: {
       default: "287px",
@@ -59,30 +59,33 @@ const s = stylex.create({
     },
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+
     overflowX: "hidden",
     flexWrap: "nowrap",
   },
 
   original: (animate) => ({
+    marginRight: "20px",
     display: "flex",
     columnGap: "20px",
-    marginRight: "20px",
     animationName: infiniteAnimation1,
-    animationDuration: "40s",
+    animationDuration: "33s",
     animationTimingFunction: "linear",
     animationIterationCount: "infinite",
     animationDirection: "normal",
-    animationFillMode: "none",
+    animationFillMode: "forwards",
     animationPlayState: `${!animate && "paused"}`,
   }),
   clone: (animate) => ({
     display: "flex",
     columnGap: "20px",
+    marginRight: "20px",
     animationName: infiniteAnimation2,
-    animationDuration: "40s",
+    animationDuration: "33s",
     animationTimingFunction: "linear",
     animationIterationCount: "infinite",
+    animationDirection: "normal",
+    animationFillMode: "none",
     animationPlayState: `${!animate && "paused"}`,
   }),
   mobileBr: {
@@ -118,7 +121,7 @@ const NavistoreSlider = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <div {...stylex.props(s.container)}>
         <h3 {...stylex.props(s.title)}>
           다양한 상품을 <br /> 최저가로 구매하세요
@@ -168,7 +171,7 @@ const NavistoreSlider = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

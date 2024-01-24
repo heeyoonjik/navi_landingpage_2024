@@ -27,12 +27,12 @@ const fadeInRightSlide = {
 
 const s = stylex.create({
   secondSecton: {
-    width: "100vw",
+    width: "100%",
     height: "300px",
   },
 
   container: {
-    width: "100vw",
+    width: "100%",
     height: "auto",
     display: "flex",
     flexDirection: "column",

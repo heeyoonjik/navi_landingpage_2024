@@ -9,15 +9,15 @@ import youtube from "@/assets/png/icon_youtube.png";
 
 const s = stylex.create({
   container: {
-    width: "100vw",
-    height: "100vh",
+    width: "100%",
+    height: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
   imgContainer: {
     position: "relative",
-    width: "100vw",
+    width: "100%",
     height: "80vh",
   },
   img: {

@@ -1,15 +1,10 @@
-"use client";
-import { fontColor } from "../../../style/tokens.stylex";
 import stylex from "@stylexjs/stylex";
-
-import React, { useRef } from "react";
-import DiscountBoard from "./discountBoard";
+import Image from "next/image";
+import React from "react";
 import card_emoji_cap from "@/../public/images/card/card_emoji_cap.png";
 import card_emoji_discount from "@/../public/images/card/card_emoji_discount.png";
+
 import card_emoji_sushi from "@/../public/images/card/card_emoji_sushi.png";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import DiscountBanners from "./dicountBanners";
 
 const s = stylex.create({
   container: {
@@ -61,34 +56,7 @@ const s = stylex.create({
       "@media (max-width: 860px)": "100vh",
     },
     backgroundColor: "#FFD023",
-    display: {
-      default: "flex",
-      "@media (max-width: 860px)": "none",
-    },
-    overflowX: {
-      default: "hidden",
-      "@media (max-width: 860px)": "hidden",
-    },
-    paddingLeft: {
-      default: "calc( 50vw - 168px )",
-      "@media (max-width: 860px)": "calc( 50vw - 80px )",
-    },
-  },
-
-  wideContainerMobile: {
-    marginTop: "100px",
-    width: "100%",
-    position: "sticky",
-    top: "0px",
-    height: {
-      default: "100vh",
-      "@media (max-width: 860px)": "100vh",
-    },
-    backgroundColor: "#FFD023",
-    display: {
-      default: "none",
-      "@media (max-width: 860px)": "flex",
-    },
+    display: "flex",
     overflowX: {
       default: "hidden",
       "@media (max-width: 860px)": "hidden",
@@ -203,57 +171,36 @@ const s = stylex.create({
   },
 });
 
-const DiscountSection = () => {
-  const targetRef = useRef<any>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0.8, 1.0], ["0px", "-792px"]);
-
-  const mobileX = useTransform(scrollYProgress, [0.4, 1.0], ["0px", "-392px"]);
-
+const DiscountBanners = () => {
   return (
-    <section {...stylex.props(s.container)} ref={targetRef}>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.6 }}
-        transition={{
-          duration: 1,
-          ease: "easeInOut",
-        }}
-        whileInView={{
-          opacity: 1,
-          scale: 1,
-        }}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <h2 {...stylex.props(s.sectionTitle)}>
-          급식카드의 <br /> 소비를 부담없게.
-        </h2>
-      </motion.div>
-      <h3 {...stylex.props(s.title)}>
-        집 근처 가게에서 <br /> 저렴하게 식사하세요
-      </h3>
-      <p {...stylex.props(s.description)}>
-        다양한 음식을 저렴하게 드실 수 있어요
-      </p>
-      <div {...stylex.props(s.wideContainer)}>
-        <motion.div style={{ x }} {...stylex.props(s.sliderContainer)}>
-          <DiscountBanners />
-        </motion.div>
+    <>
+      <div {...stylex.props(s.banner)}>
+        <p {...stylex.props(s.bannerParagraph)}>
+          이용가능 식당 <br />총 2407곳
+        </p>
+        <div {...stylex.props(s.capContainer)}>
+          <Image src={card_emoji_cap} alt="이용가능 식당 총 2407곳" fill />
+        </div>
       </div>
-      <div {...stylex.props(s.wideContainerMobile)}>
-        <motion.div style={{ x: mobileX }} {...stylex.props(s.sliderContainer)}>
-          <DiscountBanners />
-        </motion.div>
+      <div {...stylex.props(s.banner)}>
+        <p {...stylex.props(s.bannerParagraph)}>
+          평균 <br />
+          50% 할인
+        </p>
+        <div {...stylex.props(s.discountEmojiContainer)}>
+          <Image src={card_emoji_discount} alt="평균 50% 할인" fill />
+        </div>
       </div>
-    </section>
+      <div {...stylex.props(s.lastBanner)}>
+        <p {...stylex.props(s.bannerParagraph)}>
+          제한없는 <br /> 메뉴
+        </p>
+        <div {...stylex.props(s.sushiContainer)}>
+          <Image src={card_emoji_sushi} alt="제한없는 메뉴" fill />
+        </div>
+      </div>
+    </>
   );
 };
 
-export default DiscountSection;
+export default DiscountBanners;

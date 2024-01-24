@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const s = stylex.create({
   container: {
-    width: "100vw",
+    width: "100%",
 
     height: {
       default: "560px",

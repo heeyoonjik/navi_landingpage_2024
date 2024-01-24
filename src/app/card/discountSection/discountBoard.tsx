@@ -16,13 +16,13 @@ const s = stylex.create({
   container: {
     display: "grid",
     width: {
-      default: "100%",
-      "@media (max-width: 860px)": "80%",
+      default: "834px",
+      "@media (max-width: 860px)": "295px",
     },
 
     height: {
       default: "auto",
-      "@media (max-width: 860px)": "470px",
+      "@media (max-width: 860px)": "551px",
     },
     gridTemplateColumns: {
       default: "1fr 1fr 1fr",
@@ -31,7 +31,7 @@ const s = stylex.create({
 
     gridTemplateRows: {
       default: "340px  264px",
-      "@media (max-width: 860px)": "1fr 1fr 1fr",
+      "@media (max-width: 860px)": "1fr 1fr 140px",
     },
     gap: {
       default: "20px",
@@ -214,12 +214,19 @@ const s = stylex.create({
       default: "334px",
       "@media (max-width: 860px)": "120px",
     },
+    marginTop: {
+      default: "0px",
+      "@media (max-width: 860px)": "20px",
+    },
   },
 
   carContainer: {
     position: "relative",
     flexShrink: "0",
-    top: "-45px",
+    top: {
+      default: "-45px",
+      "@media (max-width: 860px)": "-20px",
+    },
     width: {
       default: "209px",
       "@media (max-width: 860px)": "100px",

@@ -30,7 +30,7 @@ const metadata = {
 
 const s = stylex.create({
   container: {
-    width: "100vw",
+    width: "100%",
   },
   introContainer: {
     width: "100%",

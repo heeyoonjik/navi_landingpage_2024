@@ -26,7 +26,7 @@ const infiniteAnimation2 = stylex.keyframes({
 
 const s = stylex.create({
   container: {
-    width: "100vw",
+    width: "100%",
     paddingTop: "87px",
 
     display: "flex",

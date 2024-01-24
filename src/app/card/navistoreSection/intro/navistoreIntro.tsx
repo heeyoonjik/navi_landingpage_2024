@@ -11,10 +11,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const s = stylex.create({
   container: {
-    width: "100vw",
+    width: "100%",
     height: "1000px",
     borderRadius: "23px",
-    marginTop: "230px",
+    marginTop: {
+      default: "230px",
+      "@media (max-width: 860px)": "150px",
+    },
     position: "relative",
     display: "flex",
     alignItems: "flex-end",

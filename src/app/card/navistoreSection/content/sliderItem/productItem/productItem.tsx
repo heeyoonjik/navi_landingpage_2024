@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import stylex from "@stylexjs/stylex";
 import Image from "next/image";
@@ -28,11 +29,11 @@ const I = stylex.create({
     position: "relative",
     width: {
       default: "195px",
-      "@media (max-width: 860px)": "109px",
+      "@media (max-width: 860px)": "150px",
     },
     height: {
       default: "195px",
-      "@media (max-width: 860px)": "109px",
+      "@media (max-width: 860px)": "150px",
     },
     borderRadius: {
       default: "16px",
@@ -42,6 +43,9 @@ const I = stylex.create({
   image: {
     objectFit: "contain",
     borderRadius: "16px",
+    position: "absolute",
+    width: "100%",
+    height: "100%",
   },
   infoContainer: {
     width: "100%",
@@ -54,14 +58,18 @@ const I = stylex.create({
       default: "20px",
       "@media (max-width: 860px)": "10px",
     },
+    marginTop: "10px",
     color: "#3C3C32",
-    marginBottom: "20px",
+    marginBottom: {
+      default: "20px",
+      "@media (max-width: 860px)": "10px",
+    },
   },
 
   originalPrice: {
     fontSize: {
       default: "20px",
-      "@media (max-width: 860px)": "10px",
+      "@media (max-width: 860px)": "15px",
     },
     color: "#7B8390",
     textDecoration: "line-through",
@@ -69,7 +77,7 @@ const I = stylex.create({
   discountedPrice: {
     fontSize: {
       default: "20px",
-      "@media (max-width: 860px)": "10px",
+      "@media (max-width: 860px)": "20px",
     },
     fontWeight: "bold",
     color: "#3C3C32",
@@ -93,10 +101,9 @@ const ProductItem = (props: ownProps) => {
   return (
     <div {...stylex.props(I.container)}>
       <div {...stylex.props(I.imageContainer)}>
-        <Image
+        <img
           src={itemData.thumbnail}
           alt={"썸네일"}
-          fill
           {...stylex.props(I.image)}
         />
       </div>

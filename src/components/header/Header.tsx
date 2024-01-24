@@ -15,7 +15,7 @@ const H = stylex.create({
       default: "70px",
       "@media (max-width: 860px)": "auto",
     },
-    width: "100vw",
+    width: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -41,7 +41,7 @@ const H = stylex.create({
       default: "70px",
       "@media (max-width: 860px)": "auto",
     },
-    width: "100vw",
+    width: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -82,7 +82,7 @@ const H = stylex.create({
 
   headerContainer: {
     display: "flex",
-    width: "100vw",
+    width: "100%",
     height: "40px",
     alignItems: "center",
     justifyContent: "space-between",
