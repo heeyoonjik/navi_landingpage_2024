@@ -20,7 +20,7 @@ const s = stylex.create({
     flexDirection: "column",
     alignItems: "center",
     height: {
-      default: "12000px",
+      default: "15000px",
       "@media (max-width: 860px)": "9450px",
     },
   },

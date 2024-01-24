@@ -161,7 +161,6 @@ const s = stylex.create({
   },
 
   sliderContainer: {
-    backgroundColor: "green",
     display: "flex",
     gap: {
       default: "60px",

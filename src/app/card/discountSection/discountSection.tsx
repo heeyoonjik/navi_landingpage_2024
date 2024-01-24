@@ -193,7 +193,6 @@ const s = stylex.create({
   },
 
   sliderContainer: {
-    backgroundColor: "green",
     display: "flex",
     gap: {
       default: "60px",
@@ -210,7 +209,7 @@ const DiscountSection = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0.8, 1.0], ["0px", "-792px"]);
+  const x = useTransform(scrollYProgress, [0.5, 1.0], ["0px", "-792px"]);
 
   const mobileX = useTransform(scrollYProgress, [0.4, 1.0], ["0px", "-392px"]);
 
