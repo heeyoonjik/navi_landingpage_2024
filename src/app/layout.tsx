@@ -3,15 +3,13 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/footer";
 
-type NaverMetadata = {
-  "naver-site-verification": string;
-};
-
-export const metadata: Metadata & NaverMetadata = {
+export const metadata: Metadata = {
   title: "나비얌",
   description:
     "모두에게 걱정없는 한 끼가 당연해지는 그 날까지 편리한 식사 예약 서비스 플랫폼",
-  "naver-site-verification": "b9055b066922ca52bd4b7f7b7f6be2001439887c",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
