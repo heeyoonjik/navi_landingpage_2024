@@ -1,5 +1,4 @@
 "use client";
-import { color, fontColor } from "../../style/tokens.stylex";
 import stylex from "@stylexjs/stylex";
 import React from "react";
 import { motion } from "framer-motion";
