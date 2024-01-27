@@ -2,18 +2,11 @@ import React from "react";
 import stylex, { keyframes } from "@stylexjs/stylex";
 import Image from "next/image";
 import IntroBackground from "@/assets/png/HomeIntroBackground.png";
-import { fontColor } from "../../style/tokens.stylex";
 import Qr from "@/assets/svg/qr";
-import mock_home from "@/../public/images/mock_home.png";
 import mobile_background from "@/../public/images/home/home_mobile_background.png";
 import Google from "@/assets/svg/icon_gogglePay";
 import Apple from "@/assets/svg/icon_appStore";
-import { motion } from "framer-motion";
-
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
+import MobilePhone from "./MobilePhone";
 
 const s = stylex.create({
   container: {
@@ -65,7 +58,7 @@ const s = stylex.create({
     color: "white",
     fontSize: {
       default: "46px",
-      "@media (max-width: 860px)": "30px",
+      "@media (max-width: 860px)": "25px",
     },
   },
 
@@ -74,7 +67,7 @@ const s = stylex.create({
     fontWeight: "300",
     fontSize: {
       default: "24px",
-      "@media (max-width: 860px)": "20px",
+      "@media (max-width: 860px)": "15px",
     },
     color: "#E0E0E0",
     marginTop: {
@@ -163,69 +156,40 @@ const Introducton = () => {
   return (
     <div {...stylex.props(s.container)}>
       <div {...stylex.props(s.contentContainer)}>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeIn}
-          transition={{
-            duration: 0.6,
-          }}
-          viewport={{ once: true }}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-          }}
-        >
-          <h1 {...stylex.props(s.title)}>
-            우리 동네 착한 가게와 함께하는 따뜻한 식사나눔 플랫폼
-          </h1>
-          <p {...stylex.props(s.paragraph)}>
-            나비얌은 결식 우려 아동과 지역 가게를 연결하여 사회 각층의
-            결식문제를 해결하고 지역 상권을 활성화합니다.
-          </p>
-          <div {...stylex.props(s.downloadBoxContainer)}>
-            <p>앱 다운로드</p>
-            <div {...stylex.props(s.qrContainer)}>
-              <Qr width="110" height="110" />
+        <h1 {...stylex.props(s.title)}>
+          우리 동네 착한 가게와 함께하는
+          <br />
+          따뜻한 식사 플랫폼
+        </h1>
+        <p {...stylex.props(s.paragraph)}>
+          나비얌은 결식 우려 아동과 지역 가게를 연결하여 <br /> 사회 각층의
+          결식문제를 해결하고 지역 상권을 활성화합니다.
+        </p>
+        <div {...stylex.props(s.downloadBoxContainer)}>
+          <p>앱 다운로드</p>
+          <div {...stylex.props(s.qrContainer)}>
+            <Qr width="110" height="110" />
+          </div>
+        </div>
+        <div {...stylex.props(s.mobileDownloadContainer)}>
+          <a
+            target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.naviclient&hl=ko&gl=US"
+          >
+            <div {...stylex.props(s.downloadButton)}>
+              <Google />
             </div>
-          </div>
-          <div {...stylex.props(s.mobileDownloadContainer)}>
-            <a
-              target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.naviclient&hl=ko&gl=US"
-            >
-              <div {...stylex.props(s.downloadButton)}>
-                <Google />
-              </div>
-            </a>
-            <a
-              target="_blank"
-              href="https://apps.apple.com/kr/app/%EB%82%98%EB%B9%84%EC%96%8C-%EA%B8%89%EC%8B%9D%EC%B9%B4%EB%93%9C%EB%A5%BC-%EC%89%BD%EA%B3%A0-%ED%8E%B8%ED%95%98%EA%B2%8C/id6449865025"
-            >
-              <div {...stylex.props(s.downloadButton)}>
-                <Apple />
-              </div>
-            </a>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ y: 100 }}
-          whileInView={{ y: 0 }}
-          transition={{
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          viewport={{ once: true }}
-          {...stylex.props(s.mockPhoneContinaer)}
-        >
-          <Image
-            src={mock_home}
-            fill
-            alt="나비얌 스마트폰 홈화면 캡쳐 이미지"
-            {...stylex.props(s.mockHome)}
-          />
-        </motion.div>
+          </a>
+          <a
+            target="_blank"
+            href="https://apps.apple.com/kr/app/%EB%82%98%EB%B9%84%EC%96%8C-%EA%B8%89%EC%8B%9D%EC%B9%B4%EB%93%9C%EB%A5%BC-%EC%89%BD%EA%B3%A0-%ED%8E%B8%ED%95%98%EA%B2%8C/id6449865025"
+          >
+            <div {...stylex.props(s.downloadButton)}>
+              <Apple />
+            </div>
+          </a>
+        </div>
+        <MobilePhone />
       </div>
 
       <Image
