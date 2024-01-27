@@ -4,9 +4,24 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: "나비얌",
-  description:
-    "모두에게 걱정없는 한 끼가 당연해지는 그 날까지 편리한 식사 예약 서비스 플랫폼",
+  description: "우리 동네 착한 가게와 함께하는 따뜻한 식사 플랫폼",
+  openGraph: {
+    title: "나비얌",
+    description: "우리 동네 착한 가게와 함께하는 따뜻한 식사 플랫폼",
+    url: "https://www.nanumnavi.com/",
+    siteName: "/sitemap.xml",
+    images: [
+      {
+        url: "/ogImage.png",
+        width: 1000,
+        height: 500,
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +37,23 @@ export default function RootLayout({
           content="b9055b066922ca52bd4b7f7b7f6be2001439887c"
         />
         <meta name="thumbnail" content="/thumbnail.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
       </head>
       <body>
         <Header />
