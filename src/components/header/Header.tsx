@@ -64,10 +64,6 @@ const H = stylex.create({
     },
     display: "flex",
     flexShrink: "0",
-    // height: {
-    //   default: "100%",
-    //   "@media (max-width: 860px)": `${navOpen ? "100vh" : "auto"}`,
-    // },
 
     flexDirection: {
       default: "row",
@@ -149,7 +145,11 @@ const H = stylex.create({
 
     color: {
       default: `${
-        isScrolled ? "black" : pathname === "/boss" ? "black" : "white"
+        isScrolled
+          ? "black"
+          : pathname === "/boss" || pathname === "/news" || pathname === "/team"
+          ? "black"
+          : "white"
       }`,
       "@media (max-width: 860px)": "black",
     },
@@ -277,8 +277,15 @@ const Header = () => {
           >
             <motion.div whileHover={{ scale: 1.2 }}>입점 안내</motion.div>
           </Link>
-          <Link href="/news">
-            <motion.div whileHover={{ scale: 1.2 }}>나비 소식</motion.div>
+          {/* <Link href="/news">
+            <motion.div whileHover={{ scale: 1.2 }}>ESG</motion.div>
+          </Link> */}
+          <Link
+            href="/team"
+            onClick={() => setNavOpen(false)}
+            {...stylex.props(pathname === "/team" && H.yellowText)}
+          >
+            <motion.div whileHover={{ scale: 1.2 }}>나비팀</motion.div>
           </Link>
           <Link
             href="/contact"

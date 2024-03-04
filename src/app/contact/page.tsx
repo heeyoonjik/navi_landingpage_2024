@@ -48,7 +48,7 @@ const s = stylex.create({
     color: "#3C3C32",
   },
   aContainer: {
-    color: "#3C3C32",
+    color: "#7B8390",
     fontSize: {
       default: "35px",
       "@media (max-width: 860px)": "20px",

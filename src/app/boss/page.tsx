@@ -601,9 +601,7 @@ const page = () => {
             </div>
             <div {...stylex.props(s.solutionCard)}>
               <p {...stylex.props(s.solutionCardTitle)}>
-                앱/웹/포스기 <br />
-                취향것 골라,
-                <br />
+                사장님 앱에서 <br />
                 편하게 가게 관리 <br />
               </p>
             </div>

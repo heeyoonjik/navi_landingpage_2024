@@ -209,7 +209,12 @@ const MainSection = () => {
               돈쭐단 참여하기
             </DescriptionSection.Button>
             <DescriptionSection.Button marginLeft="10px">
-              얌이 굿즈
+              <a
+                href="https://tumblbug.com/naviyam?ref=%25EA%25B2%2580%25EC%2583%2589%252F%25EC%25B5%259C%25EA%25B7%25BC"
+                target="_blank"
+              >
+                얌이 굿즈
+              </a>
             </DescriptionSection.Button>
           </DescriptionSection.ButtonContainer>
         </DescriptionSection.Column>
