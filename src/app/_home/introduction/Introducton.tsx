@@ -1,11 +1,7 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import stylex, { keyframes } from "@stylexjs/stylex";
-import Image from "next/image";
-import IntroBackground from "@/assets/png/HomeIntroBackground.png";
 import Qr from "@/assets/svg/qr";
-import mobile_background from "@/../public/images/home/home_mobile_background.png";
-import Google from "@/assets/svg/icon_gogglePay";
-import Apple from "@/assets/svg/icon_appStore";
 import MobilePhone from "./MobilePhone";
 
 const s = stylex.create({
@@ -55,6 +51,7 @@ const s = stylex.create({
     flexDirection: "column",
     alignItems: "flex-start",
     position: "relative",
+    gap: "10px",
   },
 
   title: {
@@ -74,10 +71,6 @@ const s = stylex.create({
       "@media (max-width: 860px)": "15px",
     },
     color: "#E0E0E0",
-    marginTop: {
-      default: "22px",
-      "@media (max-width: 860px)": "10px",
-    },
   },
   qrContainer: {
     width: "140px",
@@ -138,7 +131,6 @@ const s = stylex.create({
       "@media (max-width: 860px)": "flex",
     },
     backgroundColor: "#F5C242",
-    // display: "flex",
     alignItems: "center",
     justifyContent: "center",
     border: "none",
@@ -154,20 +146,53 @@ const s = stylex.create({
     alignItems: "center",
     width: "155px",
   },
+
+  mobileDownloadButton: {
+    width: "120px",
+    height: "40px",
+    borderRadius: "20px",
+    backgroundColor: "#F5C242",
+    border: "none",
+    fontWeight: "500",
+    fontSize: "15px",
+    display: {
+      default: "none",
+      "@media (max-width: 860px)": "block",
+    },
+  },
 });
 
 const Introducton = () => {
+  const [downloadUrl, setDownloadUrl] = useState<string>("");
+
+  useEffect(() => {
+    if (/Android|iPhone/i.test(navigator.userAgent)) {
+    }
+
+    if (navigator.userAgent.match(/iPhone/i)) {
+      setDownloadUrl(
+        "https://apps.apple.com/kr/app/%EB%82%98%EB%B9%84%EC%96%8C-%EA%B8%89%EC%8B%9D%EC%B9%B4%EB%93%9C%EB%A5%BC-%EC%89%BD%EA%B3%A0-%ED%8E%B8%ED%95%98%EA%B2%8C/id6449865025"
+      );
+    }
+
+    if (navigator.userAgent.match(/Android/i)) {
+      setDownloadUrl(
+        "https://play.google.com/store/apps/details?id=com.naviclient&hl=ko&gl=US"
+      );
+    }
+  }, []);
+
   return (
     <div {...stylex.props(s.container)}>
       <div {...stylex.props(s.contentContainer)}>
         <h1 {...stylex.props(s.title)}>
-          우리 동네 착한 가게와 함께하는
+          우리 동네 <br />
+          착한 가게와 함께하는
           <br />
           따뜻한 식사 플랫폼
         </h1>
         <p {...stylex.props(s.paragraph)}>
-          나비얌은 결식 우려 아동과 지역 가게를 연결하여 <br /> 사회 각층의
-          결식문제를 해결하고 지역 상권을 활성화합니다.
+          사회 각층의 결식문제를 해결하고 <br /> 지역 상권을 활성화합니다.
         </p>
         <div {...stylex.props(s.downloadBoxContainer)}>
           <p>앱 다운로드</p>
@@ -175,39 +200,12 @@ const Introducton = () => {
             <Qr width="110" height="110" />
           </div>
         </div>
-        <div {...stylex.props(s.mobileDownloadContainer)}>
-          <a
-            target="_blank"
-            href="https://play.google.com/store/apps/details?id=com.naviclient&hl=ko&gl=US"
-          >
-            <div {...stylex.props(s.downloadButton)}>
-              <Google />
-            </div>
-          </a>
-          <a
-            target="_blank"
-            href="https://apps.apple.com/kr/app/%EB%82%98%EB%B9%84%EC%96%8C-%EA%B8%89%EC%8B%9D%EC%B9%B4%EB%93%9C%EB%A5%BC-%EC%89%BD%EA%B3%A0-%ED%8E%B8%ED%95%98%EA%B2%8C/id6449865025"
-          >
-            <div {...stylex.props(s.downloadButton)}>
-              <Apple />
-            </div>
-          </a>
-        </div>
+        <a href={downloadUrl} target="_blank">
+          <button {...stylex.props(s.mobileDownloadButton)}>앱 다운로드</button>
+        </a>
+
         <MobilePhone />
       </div>
-      {/* 
-      <Image
-        src={IntroBackground}
-        alt="엄마와 아이가 함께 나비얌 앱을 보는 이미지 PC"
-        fill
-        {...stylex.props(s.backgroundImage)}
-      />
-      <Image
-        src={mobile_background}
-        alt="엄마와 아이가 함께 나비얌 앱을 보는 이미지 MOBILE"
-        fill
-        {...stylex.props(s.mobileBackgroundImage)}
-      /> */}
     </div>
   );
 };

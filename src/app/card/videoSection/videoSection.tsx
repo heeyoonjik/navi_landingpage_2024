@@ -1,10 +1,11 @@
 "use client";
 import React, { useRef } from "react";
 import stylex, { keyframes } from "@stylexjs/stylex";
-import { fontColor } from "../../../style/tokens.stylex";
 import Image from "next/image";
 import CardIntroMock from "@/assets/png/cardIntroMock.png";
 import { motion, useScroll, useTransform } from "framer-motion";
+import cardIntro1 from "@/../public/images/card/card_intro_1.png";
+import cardIntro4 from "@/../public/images/card/card_intro_4.png";
 
 const fadeInPopUp = {
   hidden: { opacity: 0, y: 70 },
@@ -154,6 +155,10 @@ const s = stylex.create({
     flexDirection: "column",
     alignItems: "center",
   },
+
+  introImageContainer: {
+    borderRadius: "20px",
+  },
 });
 
 const VideoSection = () => {
@@ -206,30 +211,20 @@ const VideoSection = () => {
       <div {...stylex.props(s.introductionContainer)}>
         <div {...stylex.props(s.cardContainer("row-reverse"))}>
           <motion.div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              scale: scrollYProgress,
-              opacity: scrollYProgress,
-            }}
             initial="hidden"
             whileInView="visible"
             variants={fadeInPopUp}
+            viewport={{ once: true }}
             transition={{
               duration: 0.6,
             }}
             {...stylex.props(s.videoContainer)}
           >
-            <video
-              {...stylex.props(s.videoStyle)}
-              autoPlay
-              muted
-              loop
-              controls={false}
-            >
-              <source src="/videos/card_certification.mp4" type="video/mp4" />
-            </video>
+            <Image
+              src={cardIntro1}
+              alt="급식카드 온라인 인증 화면"
+              {...stylex.props(s.introImageContainer)}
+            />
           </motion.div>
 
           <motion.div
@@ -246,22 +241,14 @@ const VideoSection = () => {
               급식카드 <br /> 간편하게 인증하고
             </h3>
             <p {...stylex.props(s.description("start"))}>
-              사진 촬영 한 번이면 끝나요
+              자녀 다인증도 가능해요
             </p>
           </motion.div>
         </div>
 
         <div {...stylex.props(s.cardContainer("row"))}>
           <div {...stylex.props(s.videoContainer)}>
-            <video
-              {...stylex.props(s.videoStyle)}
-              autoPlay
-              muted
-              loop
-              controls={false}
-            >
-              <source src="/videos/nearShop.mp4" type="video/mp4" />
-            </video>
+            <Image src={cardIntro1} alt="급식카드 온라인 인증 화면" />
           </div>
           <motion.div
             initial="hidden"
@@ -276,7 +263,7 @@ const VideoSection = () => {
               앱에서 내 주변 <br /> 이용 가능 식당 확인하고
             </h3>
             <p {...stylex.props(s.description("right"))}>
-              더 이상 거절당하거나 눈치 볼 일 없어요
+              부정확한 급식카드 가맹점 정보는 이제 그만
             </p>
           </motion.div>
         </div>
@@ -303,25 +290,21 @@ const VideoSection = () => {
             }}
           >
             <h3 {...stylex.props(s.title("left"))}>
-              간편결제로 <br /> 식권 티켓 구매하고
+              급식카드로 <br /> 식사 기프티콘 구매하고
             </h3>
             <p {...stylex.props(s.description("start"))}>
-              다양한 할인 혜택으로 저렴하게 구매 가능해요
+              급식카드 / 일반결제 모두 온라인 결제 가능해요
             </p>
           </motion.div>
         </div>
 
         <div {...stylex.props(s.cardContainer("row"))}>
           <div {...stylex.props(s.videoContainer)}>
-            <video
-              {...stylex.props(s.videoStyle)}
-              autoPlay
-              muted
-              loop
-              controls={false}
-            >
-              <source src="/videos/card_ticketIntro.mp4" type="video/mp4" />
-            </video>
+            <Image
+              src={cardIntro4}
+              alt="급식카드 온라인 인증 화면"
+              {...stylex.props(s.introImageContainer)}
+            />
           </div>
           <motion.div
             initial="hidden"
@@ -336,7 +319,7 @@ const VideoSection = () => {
               드시고 싶을 때 <br /> 사장님께 보여드리세요
             </h3>
             <p {...stylex.props(s.description("end"))}>
-              급식카드 대신 모바일 티켓만 보여드리세요
+              급식카드 대신 키프티콘만 보여드리세요
             </p>
           </motion.div>
         </div>
