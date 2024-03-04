@@ -20,6 +20,10 @@ const s = stylex.create({
     justifyContent: "center",
     paddingTop: "110px",
     marginBottom: "100px",
+    backgroundImage: `url("/images/home/home_mobile_background.png")`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "right",
   },
 
   backgroundImage: {
@@ -191,19 +195,19 @@ const Introducton = () => {
         </div>
         <MobilePhone />
       </div>
-
+      {/* 
       <Image
         src={IntroBackground}
-        alt="엄마와 아이가 함께 나비얌 앱을 보는 이미지"
+        alt="엄마와 아이가 함께 나비얌 앱을 보는 이미지 PC"
         fill
         {...stylex.props(s.backgroundImage)}
       />
       <Image
         src={mobile_background}
-        alt="엄마와 아이가 함께 나비얌 앱을 보는 이미지"
+        alt="엄마와 아이가 함께 나비얌 앱을 보는 이미지 MOBILE"
         fill
         {...stylex.props(s.mobileBackgroundImage)}
-      />
+      /> */}
     </div>
   );
 };
