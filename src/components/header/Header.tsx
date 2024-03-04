@@ -219,7 +219,6 @@ const Header = () => {
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 70 ? true : false);
-    console.log("window.scrollY : ", window.scrollY);
   };
 
   useEffect(() => {
@@ -278,9 +277,9 @@ const Header = () => {
           >
             <motion.div whileHover={{ scale: 1.2 }}>입점 안내</motion.div>
           </Link>
-          {/* <Link href="/team">
-              <motion.div whileHover={{ scale: 1.2 }}>팀 소개</motion.div>
-            </Link> */}
+          <Link href="/news">
+            <motion.div whileHover={{ scale: 1.2 }}>나비 소식</motion.div>
+          </Link>
           <Link
             href="/contact"
             {...stylex.props(pathname === "/contact" && H.yellowText)}

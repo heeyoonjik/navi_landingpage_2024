@@ -186,7 +186,7 @@ const BossInstaSlider = () => {
           가게를 홍보해드리고 있습니다.
         </p>
         <p {...stylex.props(s.subDescription)}>
-          *인스타그램 팔로워 수 약 8000명
+          *인스타그램 팔로워 수 약 1.2만명
         </p>
         <div {...stylex.props(s.sliderTotalContainer)}>
           <div {...stylex.props(s.sliderContainer)}>
