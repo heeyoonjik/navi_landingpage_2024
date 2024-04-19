@@ -593,16 +593,16 @@ const page = () => {
               <p {...stylex.props(s.solutionCardTitle)}>
                 빠른 정산,
                 <br />
-                낮은 수수료(3%).
+                중개수수료 <br /> 무료.
               </p>
               <p {...stylex.props(s.solutionCardSubTitle)}>
-                *결제대행수수료, 부가세 포함 5.39%
+                (은행 PG사 결제 수수료 <br /> 1.9%만 발생합니다)
               </p>
             </div>
             <div {...stylex.props(s.solutionCard)}>
               <p {...stylex.props(s.solutionCardTitle)}>
                 사장님 앱에서 <br />
-                편하게 가게 관리 <br />
+                편하게 <br /> 가게 관리 <br />
               </p>
             </div>
             <div {...stylex.props(s.solutionCard)}>
