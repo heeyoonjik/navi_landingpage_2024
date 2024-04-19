@@ -256,7 +256,7 @@ const Footer = () => {
     </div>
   );
 };
-
+//  푸터
 // 개인정보처리방침 이용약관
 
 export default Footer;
