@@ -222,7 +222,7 @@ const Footer = () => {
             </p>
             <div {...stylex.props(s.personInfoContainer)}>
               <a
-                href="https://nanumnavi.notion.site/98f0e8648cf64caea9bebd345bd6e9b2?pvs=4"
+                href="https://www.notion.so/nanumnavi/2e231e3ddec746bba82e5d20541bf5eb"
                 target="_blank"
                 {...stylex.props(s.personalInfoP)}
               >
