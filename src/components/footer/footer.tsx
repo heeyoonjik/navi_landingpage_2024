@@ -92,7 +92,8 @@ const s = stylex.create({
     },
   },
   infoBusinessText: {
-    color: "#7B8390",
+    color: "#080808",
+    fontSize: "16px",
   },
   infoBusinessCopyright: {
     color: "#7B8390",
@@ -134,6 +135,24 @@ const s = stylex.create({
   },
   logoContainer: {
     marginTop: "20px",
+  },
+
+  personInfoContainer: {
+    display: "flex",
+    alignItems: "center",
+    gap: "7px",
+  },
+
+  personalInfoP: {
+    fontSize: "16px",
+    fontWeight: "bold",
+    color: "#3C3C32",
+  },
+
+  copyrightp: {
+    fontSize: "16px",
+    marginTop: "10px",
+    color: "#3C3C32",
   },
 });
 
@@ -198,7 +217,27 @@ const Footer = () => {
               사업자등록번호 672-88-02761 <br />
               대표자 · 개인정보보호책임자 김하연 <br />
               서울특별시 관악구 신림로 134, 398호(신림동, 창업히어로4) <br />
-              전화번호 070-8028-2476 I 메일 nanumnavi@gmail.com <br /> <br />
+              전화번호 070-8028-2476 I 메일 nanumnavi@gmail.com <br />
+              <br />
+            </p>
+            <div {...stylex.props(s.personInfoContainer)}>
+              <a
+                href="https://nanumnavi.notion.site/98f0e8648cf64caea9bebd345bd6e9b2?pvs=4"
+                target="_blank"
+                {...stylex.props(s.personalInfoP)}
+              >
+                개인정보처리방침
+              </a>
+              <p {...stylex.props(s.infoBusinessText)}>I</p>
+              <a
+                href="https://nanumnavi.notion.site/e5dab6a27de743d88ca88a51714ae9d6?pvs=4"
+                target="_blank"
+                {...stylex.props(s.personalInfoP)}
+              >
+                이용약관
+              </a>
+            </div>
+            <p {...stylex.props(s.copyrightp)}>
               Copyright 2023. NanumVitamin Co., Ltd. All rights reserved.
             </p>
           </div>
