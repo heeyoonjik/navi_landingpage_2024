@@ -14,7 +14,7 @@ const s = stylex.create({
     width: "100%",
     height: {
       default: "400px",
-      "@media (max-width: 860px)": "350px",
+      "@media (max-width: 860px)": "400px",
     },
     backgroundColor: "#EFEFEF",
     display: "flex",
@@ -76,30 +76,33 @@ const s = stylex.create({
     width: "220px",
     marginTop: {
       default: "30px",
-      "@media (max-width: 860px)": "10px",
+      "@media (max-width: 860px)": "13px",
     },
   },
   infoBusinessContainer: {
     marginTop: {
       default: "110px",
-      "@media (max-width: 860px)": "10px",
+      "@media (max-width: 860px)": "13px",
     },
     display: "flex",
     flexDirection: "column",
     fontSize: {
       default: "13px",
-      "@media (max-width: 860px)": "10px",
+      "@media (max-width: 860px)": "13px",
     },
   },
   infoBusinessText: {
     color: "#080808",
-    fontSize: "16px",
+    fontSize: {
+      default: "16px",
+      "@media (max-width: 860px)": "13px",
+    },
   },
   infoBusinessCopyright: {
     color: "#7B8390",
     marginTop: {
       default: "0px",
-      "@media (max-width: 860px)": "10px",
+      "@media (max-width: 860px)": "13px",
     },
   },
   logo: {
@@ -144,13 +147,20 @@ const s = stylex.create({
   },
 
   personalInfoP: {
-    fontSize: "16px",
+    fontSize: {
+      default: "16px",
+      "@media (max-width: 860px)": "13px",
+    },
+
     fontWeight: "bold",
     color: "#3C3C32",
   },
 
   copyrightp: {
-    fontSize: "16px",
+    fontSize: {
+      default: "16px",
+      "@media (max-width: 860px)": "13px",
+    },
     marginTop: "10px",
     color: "#3C3C32",
   },
