@@ -16,6 +16,7 @@ import { InstagramEmbed } from "react-social-media-embed";
 import { motion } from "framer-motion";
 
 import "../globals.css";
+import FAQ from "./faq/FAQ";
 
 const MOBILE = "@media (max-width: 860px)";
 
@@ -28,7 +29,310 @@ const metadata = {
   title: "입점 안내",
 };
 
+const page = () => {
+  return (
+    <div {...stylex.props(s.container)}>
+      <motion.div
+        {...stylex.props(s.introContainer)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInPopUp}
+        transition={{
+          duration: 0.6,
+        }}
+      >
+        <p {...stylex.props(s.introParagraph)}>
+          <strong {...stylex.props(s.introParagraphStrong)}>나비얌에서</strong>{" "}
+          <br /> 영리와 사회적 공헌, <br /> 함께 가져가다.
+        </p>
+      </motion.div>
+
+      <div {...stylex.props(s.greySectionContainer)}>
+        <div {...stylex.props(s.innerContainer)}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInPopUp}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <p {...stylex.props(s.sectionTitleUnderLine)}>매출의 폭이</p>
+            <p {...stylex.props(s.sectionTitle)}>커집니다</p>
+          </motion.div>
+          <motion.div
+            {...stylex.props(s.section1row)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInPopUp}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <div {...stylex.props(s.columnLeft)}>
+              <p {...stylex.props(s.sectionDescription, s.marginTop)}>
+                <strong {...stylex.props(s.strongYellowText)}>
+                  연간 5,500억 규모
+                </strong>
+                <br /> 정부 식비 지원 바우처 예산을 챙기세요.
+              </p>
+              <div {...stylex.props(s.childContainer, s.marginTop)}>
+                <Image
+                  src={section1_child}
+                  alt="아이들이 행복해하는 사진"
+                  fill
+                />
+              </div>
+            </div>
+            <div {...stylex.props(s.columnRight)}>
+              <div {...stylex.props(s.yamContainer)}>
+                <Image
+                  src={section1_yam}
+                  fill
+                  alt="돈쭐내러 오는 소비자들이 찾아 방문합니다."
+                />
+              </div>
+              <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
+                사용되지 못하고 남는 <br />
+                급식카드 예산에서 수익을 창출하세요.
+                <br />
+                <br /> 외부 후원금 및 <br /> 나비얌 사용자 간의 기부에서 오는
+                <br />
+                추가적인 수익도 챙겨가세요
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            {...stylex.props(s.section1row)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInPopUp}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <div {...stylex.props(s.columnLeft)}>
+              <p {...stylex.props(s.sectionDescription)}>
+                현금/현물 후원 시<br />
+                <strong {...stylex.props(s.strongYellowText)}>
+                  기부금 영수증
+                </strong>
+                을 발행할 수 있습니다.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <div {...stylex.props(s.whiteSectionContainer)}>
+        <motion.div
+          {...stylex.props(s.innerContainer)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInPopUp}
+          transition={{
+            duration: 0.6,
+          }}
+        >
+          <p {...stylex.props(s.sectionTitleUnderLine)}>보육원 단체주문과</p>
+          <p {...stylex.props(s.sectionTitle)}>연결해드립니다</p>
+          <div {...stylex.props(s.section2row)}>
+            <div {...stylex.props(s.columnLeft)}>
+              <div {...stylex.props(s.nurseryContainer, s.marginTop)}>
+                <Image
+                  src={section2_food}
+                  alt="보육원 단체주문 음식 사진들"
+                  fill
+                />
+              </div>
+            </div>
+            <div {...stylex.props(s.nurseryChildSectionContainer)}>
+              <div {...stylex.props(s.nurseryChildImageContainer)}>
+                <Image
+                  src={section2_child}
+                  fill
+                  alt="보육원 단체주문 아이들의 사진"
+                />
+              </div>
+              <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
+                관악구 소재 스시 가게는 100명 <br /> 넘는 아이들이 누적
+                방문했습니다.
+              </p>
+
+              <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
+                강서구 소재 도시락 가게는 30명의 <br /> 보육원 단체주문을
+                정기적으로 <br /> 받고 있습니다.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <BossInstaSlider />
+
+      <section {...stylex.props(s.solutionSectionOuterContainer)}>
+        <motion.div
+          {...stylex.props(s.solutionSection)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInPopUp}
+          transition={{
+            duration: 0.6,
+          }}
+        >
+          <p {...stylex.props(s.sectionTitle)}>입점시 발생할</p>
+          <p {...stylex.props(s.sectionTitle)}>불편은 없어요</p>
+
+          <div {...stylex.props(s.solutionGrid)}>
+            <div {...stylex.props(s.solutionCard)}>
+              <p {...stylex.props(s.solutionCardTitle)}>
+                가게등록,
+                <br />
+                메뉴등록,
+                <br />
+                대신 해드려요.
+              </p>
+            </div>
+            <div {...stylex.props(s.solutionCard)}>
+              <p {...stylex.props(s.solutionCardTitle)}>
+                빠른 정산,
+                <br />
+                중개수수료는 <br /> 무료에요.
+              </p>
+              <p {...stylex.props(s.solutionCardSubTitle)}>
+                (은행 PG사 결제 수수료 <br /> 1.9%만 발생합니다)
+              </p>
+            </div>
+            <div {...stylex.props(s.solutionCard)}>
+              <p {...stylex.props(s.solutionCardTitle)}>
+                사장님 앱에서 <br />
+                편하게 <br /> 가게 관리 <br />
+              </p>
+            </div>
+            <div {...stylex.props(s.solutionCard)}>
+              <p {...stylex.props(s.solutionCardTitle)}>
+                주문 접수도
+                <br />
+                쉬워요.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      <div {...stylex.props(s.whiteSectionContainer)}>
+        <motion.div
+          {...stylex.props(s.innerContainer)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInPopUp}
+          transition={{
+            duration: 0.6,
+          }}
+        >
+          <p {...stylex.props(s.sectionTitleUnderLine)}>사회적 문제를</p>
+          <p {...stylex.props(s.sectionTitleUnderLine)}>해결하는</p>
+          <p {...stylex.props(s.sectionTitle)}>동참 사장님들</p>
+
+          <div {...stylex.props(s.interviewContainer)}>
+            <div {...stylex.props(s.bossInterview)}>
+              <InstagramEmbed url="https://www.instagram.com/reel/C0yRntkg5uI/" />
+              <InstagramEmbed url="https://www.instagram.com/reel/C0i7mYZgJdb/" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+      <div {...stylex.props(s.CTAOuterContainer)}>
+        <div {...stylex.props(s.CTAContainer)}>
+          <div {...stylex.props(s.CTAMobileUpper)}>
+            <p {...stylex.props(s.CTAParagraph)}>
+              <strong>온기를 요리</strong>하는 <br />
+              사장님을 위한 <strong>혜택을 챙겨가세요</strong>
+            </p>
+            <a href="https://forms.gle/cE7u1AUgEfm6GhLWA" target="_blank">
+              <div {...stylex.props(s.CTAButton)}>입점 문의</div>
+            </a>
+          </div>
+          <div {...stylex.props(s.bossyamContainer)}>
+            <Image src={boss_yam} fill alt="사장님을 위한 혜택을 챙겨가세요" />
+          </div>
+        </div>
+      </div>
+
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div {...stylex.props(s.faqContainer)}>
+          <p {...stylex.props(s.faqHeaderP)}>자주 묻는 질문</p>
+          <FAQ
+            title="입점 시 해야하는 절차가 따로 있나요?"
+            desc="아닙니다. 입점 희망을 밝혀주신 후 가게 기본 정보만 남겨주시면 가게 등록, 메뉴 등록 전부 저희가 도와드립니다. 또한 포장/현장 중심 식사 어플리케이션이기 때문에 따로 포스기나 어플 설치 없이 '기프티콘 사용하기' 버튼만 현장에서 잘 눌러주시면 영업일 기준 5일 이내 자동으로 정산이 완료됩니다."
+          />
+          <FAQ
+            title="수수료가 있나요?"
+            desc="PG사 결제 수수료 (온라인 결제 수수료)와 어플리케이션 서버 운영비를 위해 결제액의 4.9% 고정 수수료만 발생합니다. 그 외 입점 수수료나 서비스 이용료 등은 전혀 발생하지 않습니다."
+          />
+          <FAQ
+            title="할인이 필수적인가요?"
+            desc="할인은 필수적이지 않습니다! 다만 할인에 동참해주실 경우, 가게 팻말과 스티커를 보내드리며 '할인 동참 가게'임을 자체적으로 홍보해드립니다."
+          />
+          <FAQ
+            title="입점 혜택이 있나요?"
+            desc="서울시 단독 허가받은 아동급식카드 온라인 결제 플랫폼으로, 연간 6,000억원에 달하는 식비 충전 카드를 통한 고정 매출액 상승 효과를 기대할 수 있습니다. 또한 입점만 하시면 추가 비용 발생 없이 1만 팔로워 계정의 인스타그램 맛집 계정에 가게 소개 콘텐츠를 발행해드리고, 블로그에도 후기성 포스팅을 올려드려 SNS 마케팅을 도와드립니다. 또한 기업 연계 후원금을 통한 식사 쿠폰 발행처로 등록이 됩니다. 아동센터와의 단체구매도 연결해드리며 식사 기프티콘 서비스를 통한 지자체 지역상권 활성화 지원사업의 대상으로도 혜택을 받으실 수 있습니다."
+          />
+          <FAQ
+            title="현장에서 어떻게 대응하면 되나요?"
+            desc="별도 포스기 설치 없이 유저분께서 나비얌 어플리케이션 내 기프티콘 화면을 보여드리게 됩니다. 이때 '기프티콘 사용하기' 버튼만 잘 눌러주시면 됩니다."
+          />
+          <FAQ
+            title="입점을 취소하고 싶어요."
+            desc="입점을 취소하고 싶으실 경우 언제든지 070-4006-1389로 연락주시면 됩니다. 혹은 카카오톡 '나비얌' 공식 채널에서 편하게 비대면 문의 및 상담을 통해서도 취소하실 수 있습니다."
+          />
+          <FAQ
+            title="궁금한 내용이 더 있어요."
+            desc="이 외에도 궁금하신 점이 있으시다면 070-4006-1389로 연락주세요. 혹은 카카오톡 '나비얌' 공식 채널에서 편하게 비대면 문의 및 상담을 통해서도 취소하실 수 있습니다."
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default page;
+
 const s = stylex.create({
+  faqHeaderP: {
+    color: "black",
+    fontWeight: "bold",
+    fontSize: {
+      default: "60px",
+      [MOBILE]: "30px",
+    },
+  },
+  faqContainer: {
+    width: {
+      default: "834px",
+      [MOBILE]: "80%",
+    },
+    gap: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "100px",
+    flexDirection: "column",
+  },
   container: {
     width: "100%",
   },
@@ -39,9 +343,27 @@ const s = stylex.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  yellowIntroParagraph: {
+    fontWeight: "700",
+    color: "#FFD023",
+    textAlign: "center",
+    fontSize: {
+      default: "60px",
+      [MOBILE]: "30px",
+    },
+  },
   introParagraph: {
     fontWeight: "700",
     color: "#3C3C32",
+    textAlign: "center",
+    fontSize: {
+      default: "60px",
+      [MOBILE]: "30px",
+    },
+  },
+  introParagraphStrong: {
+    fontWeight: "700",
+    color: "#FFD023",
     textAlign: "center",
     fontSize: {
       default: "60px",
@@ -447,216 +769,8 @@ const s = stylex.create({
     fontSize: "20px",
     fontWeight: "700",
   },
+
+  strongYellowText: {
+    color: "#FFD023",
+  },
 });
-
-const page = () => {
-  return (
-    <div {...stylex.props(s.container)}>
-      <motion.div
-        {...stylex.props(s.introContainer)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInPopUp}
-        transition={{
-          duration: 0.6,
-        }}
-      >
-        <p {...stylex.props(s.introParagraph)}>
-          영리와 사회적 공헌을 <br /> 함께 추구하세요
-        </p>
-      </motion.div>
-
-      <div {...stylex.props(s.greySectionContainer)}>
-        <div {...stylex.props(s.innerContainer)}>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInPopUp}
-            transition={{
-              duration: 0.6,
-            }}
-          >
-            <p {...stylex.props(s.sectionTitleUnderLine)}>매출의 폭이</p>
-            <p {...stylex.props(s.sectionTitle)}>커집니다</p>
-          </motion.div>
-          <motion.div
-            {...stylex.props(s.section1row)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInPopUp}
-            transition={{
-              duration: 0.6,
-            }}
-          >
-            <div {...stylex.props(s.columnLeft)}>
-              <p {...stylex.props(s.sectionDescription, s.marginTop)}>
-                후원금 식사권과 아동급식카드로부터 <br /> 추가 수익이
-                발생합니다.
-              </p>
-              <div {...stylex.props(s.childContainer, s.marginTop)}>
-                <Image
-                  src={section1_child}
-                  alt="아이들이 행복해하는 사진"
-                  fill
-                />
-              </div>
-            </div>
-            <div {...stylex.props(s.columnRight)}>
-              <div {...stylex.props(s.yamContainer)}>
-                <Image
-                  src={section1_yam}
-                  fill
-                  alt="돈쭐내러 오는 소비자들이 찾아 방문합니다."
-                />
-              </div>
-              <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
-                돈쭐내러오는 소비자들이 <br /> 찾아 방문합니다.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      <div {...stylex.props(s.whiteSectionContainer)}>
-        <motion.div
-          {...stylex.props(s.innerContainer)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInPopUp}
-          transition={{
-            duration: 0.6,
-          }}
-        >
-          <p {...stylex.props(s.sectionTitleUnderLine)}>보육원 단체주문과</p>
-          <p {...stylex.props(s.sectionTitle)}>연결해드립니다</p>
-          <div {...stylex.props(s.section2row)}>
-            <div {...stylex.props(s.columnLeft)}>
-              <div {...stylex.props(s.nurseryContainer, s.marginTop)}>
-                <Image
-                  src={section2_food}
-                  alt="보육원 단체주문 음식 사진들"
-                  fill
-                />
-              </div>
-            </div>
-            <div {...stylex.props(s.nurseryChildSectionContainer)}>
-              <div {...stylex.props(s.nurseryChildImageContainer)}>
-                <Image
-                  src={section2_child}
-                  fill
-                  alt="보육원 단체주문 아이들의 사진"
-                />
-              </div>
-              <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
-                관악구 소재 스시 가게는 100명 <br /> 넘는 아이들이 누적
-                방문했습니다.
-              </p>
-
-              <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
-                강서구 소재 도시락 가게는 30명의 <br /> 보육원 단체주문을
-                정기적으로 <br /> 받고 있습니다.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      <BossInstaSlider />
-
-      <section {...stylex.props(s.solutionSectionOuterContainer)}>
-        <motion.div
-          {...stylex.props(s.solutionSection)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInPopUp}
-          transition={{
-            duration: 0.6,
-          }}
-        >
-          <p {...stylex.props(s.sectionTitle)}>입점시 발생할</p>
-          <p {...stylex.props(s.sectionTitle)}>불편은 없어요</p>
-
-          <div {...stylex.props(s.solutionGrid)}>
-            <div {...stylex.props(s.solutionCard)}>
-              <p {...stylex.props(s.solutionCardTitle)}>
-                가게등록,
-                <br />
-                대신 해드려요.
-              </p>
-            </div>
-            <div {...stylex.props(s.solutionCard)}>
-              <p {...stylex.props(s.solutionCardTitle)}>
-                빠른 정산,
-                <br />
-                중개수수료 <br /> 무료.
-              </p>
-              <p {...stylex.props(s.solutionCardSubTitle)}>
-                (은행 PG사 결제 수수료 <br /> 1.9%만 발생합니다)
-              </p>
-            </div>
-            <div {...stylex.props(s.solutionCard)}>
-              <p {...stylex.props(s.solutionCardTitle)}>
-                사장님 앱에서 <br />
-                편하게 <br /> 가게 관리 <br />
-              </p>
-            </div>
-            <div {...stylex.props(s.solutionCard)}>
-              <p {...stylex.props(s.solutionCardTitle)}>
-                주문 접수도
-                <br />
-                쉬워요.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      <div {...stylex.props(s.whiteSectionContainer)}>
-        <motion.div
-          {...stylex.props(s.innerContainer)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInPopUp}
-          transition={{
-            duration: 0.6,
-          }}
-        >
-          <p {...stylex.props(s.sectionTitleUnderLine)}>사회적 문제를</p>
-          <p {...stylex.props(s.sectionTitleUnderLine)}>해결하는</p>
-          <p {...stylex.props(s.sectionTitle)}>동참 사장님들</p>
-
-          <div {...stylex.props(s.interviewContainer)}>
-            <div {...stylex.props(s.bossInterview)}>
-              <InstagramEmbed url="https://www.instagram.com/reel/C0yRntkg5uI/" />
-              <InstagramEmbed url="https://www.instagram.com/reel/C0i7mYZgJdb/" />
-            </div>
-          </div>
-        </motion.div>
-      </div>
-      <div {...stylex.props(s.CTAOuterContainer)}>
-        <div {...stylex.props(s.CTAContainer)}>
-          <div {...stylex.props(s.CTAMobileUpper)}>
-            <p {...stylex.props(s.CTAParagraph)}>
-              <strong>온기를 요리</strong>하는 <br />
-              사장님을 위한 <strong>혜택을 챙겨가세요</strong>
-            </p>
-            <a href="https://forms.gle/cE7u1AUgEfm6GhLWA" target="_blank">
-              <div {...stylex.props(s.CTAButton)}>입점 문의</div>
-            </a>
-          </div>
-          <div {...stylex.props(s.bossyamContainer)}>
-            <Image src={boss_yam} fill alt="사장님을 위한 혜택을 챙겨가세요" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default page;

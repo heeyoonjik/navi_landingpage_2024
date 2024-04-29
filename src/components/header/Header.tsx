@@ -285,7 +285,7 @@ const Header = () => {
             onClick={() => setNavOpen(false)}
             {...stylex.props(pathname === "/team" && H.yellowText)}
           >
-            <motion.div whileHover={{ scale: 1.2 }}>나비팀</motion.div>
+            <motion.div whileHover={{ scale: 1.2 }}>기업소개</motion.div>
           </Link>
           <Link
             href="/contact"
