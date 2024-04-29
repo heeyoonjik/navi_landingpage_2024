@@ -122,65 +122,50 @@ const NavistoreIntro = () => {
     target: targetRef,
   });
 
-  const rotate1 = useTransform(scrollYProgress, [0, 1], ["0deg", "16deg"]);
-
-  const rotate2 = useTransform(scrollYProgress, [0, 1], ["0deg", "-50deg"]);
-
-  const popUp = useTransform(scrollYProgress, [0, 1], ["300px", "0px"]);
-
-  const width = useTransform(scrollYProgress, [0, 1], ["45%", "100%"]);
-
-  const dum = useTransform(scrollYProgress, [0, 0.9, 0.91, 1], [0, 0, 0, 1]);
-
-  const fadeIn = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-
   return (
-    <motion.div {...stylex.props(s.container)} ref={targetRef}>
-      <motion.div {...stylex.props(s.innerContainer)} style={{ width }} layout>
-        <div {...stylex.props(s.sectionTitle)}>
-          <p {...stylex.props(s.strong)}>급식카드의 </p>
-          <p>소비를 다채롭게</p>
-        </div>
-        <motion.div
-          {...stylex.props(s.spoonImageContainer)}
-          style={{ y: popUp, opacity: fadeIn }}
-        >
-          <Image
-            style={{ zIndex: 89 }}
-            src={spoon}
-            alt="나비얌은 다양한 상품을 급식카드 소지자에게 유통합니다. 급식카드 소지 아이 청소년들이 다양한 음식을 먹을 수 있도록 돕고 있습니다."
-            fill
-          />
-        </motion.div>
-        <motion.div
-          {...stylex.props(s.dumplingImageConainer)}
-          style={{ rotate: rotate1, opacity: dum }}
-        >
-          <Image
-            src={dumpling}
-            alt="나비얌은 다양한 상품을 급식카드 소지자에게 유통합니다. 그 중 만두가 있습니다."
-            fill
-          />
-        </motion.div>
-        <motion.div
-          {...stylex.props(s.riceImageContainer)}
-          style={{ rotate: rotate2 }}
-        >
-          <Image
-            src={rice}
-            alt="나비얌은 다양한 상품을 급식카드 소지자에게 유통합니다. 그 중 주먹밥이 있습니다."
-            fill
-          />
-        </motion.div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      style={{ width: "100%" }}
+    >
+      <div {...stylex.props(s.container)}>
+        <div {...stylex.props(s.innerContainer)}>
+          <div {...stylex.props(s.sectionTitle)}>
+            <p {...stylex.props(s.strong)}>급식카드의 </p>
+            <p>소비를 다채롭게</p>
+          </div>
+          <div {...stylex.props(s.spoonImageContainer)}>
+            <Image
+              style={{ zIndex: 89 }}
+              src={spoon}
+              alt="나비얌은 다양한 상품을 급식카드 소지자에게 유통합니다. 급식카드 소지 아이 청소년들이 다양한 음식을 먹을 수 있도록 돕고 있습니다."
+              fill
+            />
+          </div>
+          <div {...stylex.props(s.dumplingImageConainer)}>
+            <Image
+              src={dumpling}
+              alt="나비얌은 다양한 상품을 급식카드 소지자에게 유통합니다. 그 중 만두가 있습니다."
+              fill
+            />
+          </div>
+          <div {...stylex.props(s.riceImageContainer)}>
+            <Image
+              src={rice}
+              alt="나비얌은 다양한 상품을 급식카드 소지자에게 유통합니다. 그 중 주먹밥이 있습니다."
+              fill
+            />
+          </div>
 
-        <div {...stylex.props(s.orangeImageContainer)}>
-          <Image
-            src={orange}
-            alt="나비얌은 다양한 상품을 급식카드 소지자에게 유통합니다. 그 중 만두가 있습니다."
-            fill
-          />
+          <div {...stylex.props(s.orangeImageContainer)}>
+            <Image
+              src={orange}
+              alt="나비얌은 다양한 상품을 급식카드 소지자에게 유통합니다. 그 중 만두가 있습니다."
+              fill
+            />
+          </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };

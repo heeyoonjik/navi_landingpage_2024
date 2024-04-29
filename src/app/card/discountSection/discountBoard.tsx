@@ -150,7 +150,7 @@ const s = stylex.create({
     },
 
     borderRadius: {
-      default: "10px",
+      default: "32px",
       "@media (max-width: 860px)": "10px",
     },
     paddingLeft: {

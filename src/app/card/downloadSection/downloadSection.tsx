@@ -76,7 +76,7 @@ const DownloadSection = () => {
         {...stylex.props(s.lineContainer)}
       >
         <p {...stylex.props(s.paragraph)}>
-          혜택을 <br /> 놓치지 마세요
+          혜택을 <br /> 꼭 챙겨가세요
         </p>
 
         <LineQrToPhone />

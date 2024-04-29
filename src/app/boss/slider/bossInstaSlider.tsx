@@ -6,6 +6,9 @@ import Image from "next/image";
 import { instaImagesUpper, instaImagesBelow } from "./sliderData";
 import { color, fontColor } from "../../../style/tokens.stylex";
 import { motion } from "framer-motion";
+import yooganelogo from "@/../public/images/boss/insta/yooganelogo.png";
+import youthlogo from "@/../public/images/boss/insta/youthlogo.png";
+import tokyologo from "@/../public/images/boss/insta/tokyologo.jpg";
 
 const fadeInPopUp = {
   hidden: { opacity: 0, y: 70 },
@@ -176,18 +179,54 @@ const BossInstaSlider = () => {
           duration: 0.6,
         }}
       >
+        <p {...stylex.props(s.sectionTitleUnderLine)}>
+          전국 4500곳 넘는 가게와 프렌차이즈가
+        </p>
         <p {...stylex.props(s.sectionTitle)}>
-          온기를 요리하는 <br {...stylex.props(s.mobileVisible)} />
-          착한가게를
+          <br {...stylex.props(s.mobileVisible)} />
+          나비얌과 함게합니다
         </p>
-        <p {...stylex.props(s.sectionTitleUnderLine)}>널리 퍼트립니다</p>
-        <p {...stylex.props(s.description)}>
-          SNS를 통한 바이럴 콘테츠로 <br />
-          가게를 홍보해드리고 있습니다.
-        </p>
-        <p {...stylex.props(s.subDescription)}>
-          *인스타그램 팔로워 수 약 1.2만명
-        </p>
+
+        <div
+          style={{
+            display: "flex",
+            marginTop: "40px",
+            marginBottom: "20px",
+            gap: "20px",
+          }}
+        >
+          <div
+            style={{ position: "relative", width: "160px", height: "120px" }}
+          >
+            <Image
+              src={yooganelogo}
+              alt="유가네 로고"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div
+            style={{ position: "relative", width: "160px", height: "120px" }}
+          >
+            <Image
+              src={youthlogo}
+              alt="청년문간밥상 로고"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div
+            style={{ position: "relative", width: "160px", height: "120px" }}
+          >
+            <Image
+              src={tokyologo}
+              alt="도쿄스테이크 로고"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </div>
+
         <div {...stylex.props(s.sliderTotalContainer)}>
           <div {...stylex.props(s.sliderContainer)}>
             <div {...stylex.props(s.original)}>

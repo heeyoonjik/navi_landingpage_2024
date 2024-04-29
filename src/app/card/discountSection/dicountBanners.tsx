@@ -5,6 +5,7 @@ import card_emoji_cap from "@/../public/images/card/card_emoji_cap.png";
 import card_emoji_discount from "@/../public/images/card/card_emoji_discount.png";
 
 import card_emoji_sushi from "@/../public/images/card/card_emoji_sushi.png";
+import { format } from "date-fns";
 
 const s = stylex.create({
   container: {
@@ -68,6 +69,7 @@ const s = stylex.create({
   },
 
   banner: {
+    position: "relative",
     width: {
       default: "336px",
       "@media (max-width: 860px)": "160px",
@@ -116,6 +118,16 @@ const s = stylex.create({
     fontWeight: "700",
     color: "#3C3C32",
     textAlign: "center",
+  },
+
+  bannerDescParagraph: {
+    fontSize: {
+      default: "20px",
+      "@media (max-width: 860px)": "10px",
+    },
+    color: "#3C3C32",
+    position: "absolute",
+    bottom: 20,
   },
 
   capContainer: {
@@ -175,11 +187,16 @@ const DiscountBanners = () => {
     <>
       <div {...stylex.props(s.banner)}>
         <p {...stylex.props(s.bannerParagraph)}>
-          이용가능 식당 <br />총 2407곳
+          이용가능 식당 <br />
+          4052곳
         </p>
+
         <div {...stylex.props(s.capContainer)}>
           <Image src={card_emoji_cap} alt="이용가능 식당 총 2407곳" fill />
         </div>
+        <p {...stylex.props(s.bannerDescParagraph)}>
+          {format(new Date(), "*yyyy년 MM월 dd일 기준")}
+        </p>
       </div>
       <div {...stylex.props(s.banner)}>
         <p {...stylex.props(s.bannerParagraph)}>
