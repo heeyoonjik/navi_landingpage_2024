@@ -12,6 +12,7 @@ import mou1 from "@/../public/images/team/mou1.jpg";
 import mou2 from "@/../public/images/team/mou2.jpg";
 import mou3 from "@/../public/images/team/mou3.jpg";
 import mou4 from "@/../public/images/team/mou4.jpg";
+import mou5 from "@/../public/images/team/mou5.jpg";
 
 import press1 from "@/../public/images/team/press1.png";
 import press2 from "@/../public/images/team/press2.png";
@@ -30,7 +31,10 @@ const s = stylex.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    gap: "200px",
+    gap: {
+      default: "200px",
+      [MOBILE]: "50px",
+    },
   },
 
   historyContainer: {
@@ -50,13 +54,18 @@ const s = stylex.create({
     textAlign: "center",
     fontSize: {
       default: "60px",
-      [MOBILE]: "30px",
+      [MOBILE]: "25px",
     },
   },
 
   paragraph: {
-    fontSize: "36px",
+    fontWeight: "700",
     color: "#3C3C32",
+    textAlign: "center",
+    fontSize: {
+      default: "60px",
+      [MOBILE]: "25px",
+    },
   },
 
   outerColoContainer: {
@@ -74,26 +83,41 @@ const s = stylex.create({
   },
   rowContainer: {
     display: "flex",
-    gap: "100px",
+    gap: {
+      default: "100px",
+      [MOBILE]: "30px",
+    },
   },
 
   innerRowContainer: {
     display: "flex",
-    gap: "30px",
+    gap: {
+      default: "30px",
+      [MOBILE]: "10px",
+    },
   },
 
   year: {
-    fontSize: "35px",
+    fontSize: {
+      default: "35px",
+      [MOBILE]: "25px",
+    },
     fontWeight: "bold",
     color: "#3C3C32",
   },
   month: {
-    fontSize: "25px",
+    fontSize: {
+      default: "25px",
+      [MOBILE]: "15px",
+    },
     fontWeight: "bold",
     color: "#3C3C32",
   },
   title: {
-    fontSize: "18px",
+    fontSize: {
+      default: "18px",
+      [MOBILE]: "14px",
+    },
     color: "#3C3C32",
   },
 
@@ -104,13 +128,20 @@ const s = stylex.create({
   },
   memberBoldParagraph: {
     color: "#3C3C32",
-    fontSize: "35px",
+    fontSize: {
+      default: "35px",
+      [MOBILE]: "15px",
+    },
     fontWeight: "bold",
+    wordBreak: "keep-all",
   },
 
   memberLightParagraph: {
     color: "#3C3C32",
-    fontSize: "35px",
+    fontSize: {
+      default: "35px",
+      [MOBILE]: "15px",
+    },
   },
 
   memberDivider: {
@@ -131,15 +162,23 @@ const s = stylex.create({
 
   missionParagraph: {
     color: "#3C3C32",
-    fontSize: "35px",
+    fontSize: {
+      default: "35px",
+      [MOBILE]: "20px",
+    },
     lineHeight: 1.6,
+    wordBreak: "keep-all",
   },
 
   missionParagraphRight: {
     color: "#3C3C32",
-    fontSize: "35px",
+    fontSize: {
+      default: "35px",
+      [MOBILE]: "20px",
+    },
     lineHeight: 1.6,
     textAlign: "right",
+    wordBreak: "keep-all",
   },
 
   missionContainer: {
@@ -156,7 +195,14 @@ const s = stylex.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-    gap: "50px",
+    gap: {
+      default: "50px",
+      [MOBILE]: "10px",
+    },
+    width: {
+      default: "843px",
+      [MOBILE]: "320px",
+    },
   },
 
   memberBodyRow: {
@@ -171,7 +217,6 @@ const s = stylex.create({
       [MOBILE]: "320px",
     },
     display: "flex",
-    backgroundColor: "red",
     overflowX: "scroll",
   },
 
@@ -185,12 +230,52 @@ const s = stylex.create({
   miniNewsContainer: {
     width: {
       default: "843px",
-      [MOBILE]: "320px",
+      [MOBILE]: "340px",
     },
     display: "flex",
+    flexDirection: {
+      default: "row",
+      [MOBILE]: "column",
+    },
     alignItems: "flex-start",
     gap: "20px",
     overflowX: "scroll",
+  },
+  pcBr: {
+    display: {
+      default: "block",
+      [MOBILE]: "none",
+    },
+  },
+  mobileBr: {
+    display: {
+      default: "none",
+      [MOBILE]: "block",
+    },
+  },
+
+  teamIcon: {
+    position: "relative",
+    width: {
+      default: "271px",
+      [MOBILE]: "100px",
+    },
+    height: {
+      default: "271px",
+      [MOBILE]: "100px",
+    },
+  },
+
+  teamImg: {
+    position: "relative",
+    width: {
+      default: "843px",
+      [MOBILE]: "398px",
+    },
+    hight: {
+      default: "562px",
+      [MOBILE]: "265px",
+    },
   },
 });
 
@@ -203,23 +288,28 @@ const Team = () => {
 
       <div {...stylex.props(s.missionContainer)}>
         <p {...stylex.props(s.missionParagraph)}>
-          우리는 모바일 식사권 기반으로 <br /> 결식우려아동의 식사 접근성 개선,
-          투명한 후원 연결, <br /> 지역 커뮤니티와 소상공인의 디지털 전환을
-          지원합니다.
+          우리는 모바일 식사권 기반으로 <br {...stylex.props(s.pcBr)} />{" "}
+          결식우려아동의 식사 접근성 개선, 투명한 후원 연결,
+          <br {...stylex.props(s.pcBr)} /> 지역 커뮤니티와 소상공인의 디지털
+          전환을 지원합니다.
         </p>
         <p {...stylex.props(s.missionParagraphRight)}>
-          결식우려아동을 위한 식사권 플랫폼으로 시작했지만, <br /> 아동의 결식
-          뿐 아니라 맞벌이가구, 어르신 등
-          <br />
-          우리사회의 다양한 결식을 해결하는 <br /> 사회서비스로 자리매김하고자
-          합니다.
+          결식우려아동을 위한 식사권 플랫폼으로 시작했지만,{" "}
+          <br {...stylex.props(s.pcBr)} /> 아동의 결식 뿐 아니라 맞벌이가구,
+          어르신 등
+          <br {...stylex.props(s.pcBr)} />
+          우리사회의 다양한 결식을 해결하는 <br
+            {...stylex.props(s.pcBr)}
+          />{" "}
+          사회서비스로 자리매김하고자 합니다.
         </p>
       </div>
 
       <h1 {...stylex.props(s.heading)}>
-        국내 주요 기관·단체·투자사들과 함께합니다
+        국내 주요 기관·단체·투자사들과 <br {...stylex.props(s.mobileBr)} />{" "}
+        함께합니다
       </h1>
-      <div style={{ marginTop: "-100px" }}>
+      <div>
         <Partner />
       </div>
 
@@ -228,13 +318,19 @@ const Team = () => {
       </h1>
       <div {...stylex.props(s.MainNewsContainer)}>
         <MainNewsItem
-          imgUrl={mou4}
-          title="청년문간사회적협동조합, 나눔비타민과 업무협약 체결"
-          desc="청년문간사회적협동조합과 나눔비타민은 이번 MOU 체결을 통해 결식 우려 아동의 가정이 ‘나비얌’ 앱을 통해 무료 식사 쿠폰을 발급 받아 청년밥상문간 전 지점에서 편하게 이용할 수 있도록 했다. 심리적 낙인감이나 부담 없이, 보다 영양적으로 건강한 식사를 편하게 즐길 수 있도록 하는 것이 목표임을 밝혔다."
-          url="https://www.venturesquare.net/908087"
+          imgUrl={mou5}
+          title="나눔비타민-강서구-건협, 결식 우려 아동 지원을 위한 업무협약 체결"
+          desc="사회 각층의 결식문제 해결 및 지역 상권 활성화를 위한 모바일 식권 플랫폼 ‘나비얌’을 운영하는 주식회사 나눔비타민(대표 김하연)은 강서구(구청장 진교훈)·건강관리협회(회장 김인원, 이하 건협)와 결식 우려 아동 지원을 위한 업무협약을 체결했다. 협약에 따라 구는 결식이 우려되는 저소득 가정 아동을 발굴·선정하는 등 행정적 지원을, 건협은 식사 쿠폰 구입에 필요한 비용 1억 5000만 원 전액 지원을, 나눔비타민은 식사쿠폰 사용 플랫폼인 나비얌 운영관리를 맡는다."
+          url="https://www.ynow.co.kr/news/article.html?no=36290"
         />
       </div>
       <div {...stylex.props(s.miniNewsContainer)}>
+        <NewsItem
+          url="https://www.venturesquare.net/908087"
+          imgUrl={mou4}
+          title="청년문간사회적협동조합, 나눔비타민과 업무협약 체결"
+          desc="청년문간사회적협동조합과 나눔비타민은 이번 MOU 체결을 통해 결식 우려 아동의 가정이 ‘나비얌’ 앱을 통해 무료 식사 쿠폰을 발급 받아 청년밥상문간 전 지점에서 편하게 이용할 수 있도록 했다. 심리적 낙인감이나 부담 없이, 보다 영양적으로 건강한 식사를 편하게 즐길 수 있도록 하는 것이 목표임을 밝혔다."
+        />
         <NewsItem
           url="https://www.cooknchefnews.com/news/view/1065573509643410"
           imgUrl={mou1}
@@ -313,23 +409,22 @@ const Team = () => {
 
       <div {...stylex.props(s.memberListContainer)}>
         <p {...stylex.props(s.paragraph)}>팀원 소개</p>
-
-        <Image
-          src={groupPhoto}
-          alt="나비팀 단체사진"
-          width="843"
-          height="562"
-        />
+        <div {...stylex.props(s.teamImg)}>
+          <Image src={groupPhoto} alt="나비팀 단체사진" fill />
+        </div>
 
         <div>
           {members.map((member) => (
             <div key={member.name} {...stylex.props(s.memberRowContainer)}>
-              <Image
-                src={`/images/team/${member.name}.png`}
-                alt={member.name}
-                width="271"
-                height="271"
-              />
+              <div {...stylex.props(s.teamIcon)}>
+                <Image
+                  src={`/images/team/${member.name}.png`}
+                  alt={member.name}
+                  fill
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+
               <div>
                 <div {...stylex.props(s.memberBodyRow)}>
                   <p {...stylex.props(s.memberBoldParagraph)}>{member.role}</p>

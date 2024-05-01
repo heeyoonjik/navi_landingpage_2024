@@ -34,7 +34,14 @@ export default MainNewsItem;
 const s = stylex.create({
   container: {
     display: "flex",
-    alignItems: "center",
+    flexDirection: {
+      default: "row",
+      [MOBILE]: "column-reverse",
+    },
+    alignItems: {
+      default: "center",
+      [MOBILE]: "flex-start",
+    },
     justifyContent: "space-between",
     width: {
       default: "100%",
@@ -44,7 +51,10 @@ const s = stylex.create({
   },
 
   leftSection: {
-    width: "40%",
+    width: {
+      default: "40%",
+      [MOBILE]: "100%",
+    },
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
@@ -54,17 +64,17 @@ const s = stylex.create({
   imgContainer: {
     position: "relative",
     width: {
-      default: "300px",
-      [MOBILE]: "100px",
+      default: "400px",
+      [MOBILE]: "300px",
     },
     height: {
       default: "300px",
-      [MOBILE]: "100px",
+      [MOBILE]: "300px",
     },
   },
 
   img: {
-    objectFit: "cover",
+    objectFit: "contain",
   },
   titleP: {
     wordBreak: "keep-all",

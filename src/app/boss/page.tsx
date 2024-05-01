@@ -426,6 +426,7 @@ const s = stylex.create({
       [MOBILE]: "30px",
     },
   },
+
   greySectionContainer: {
     paddingTop: "50px",
     paddingBottom: "50px",
@@ -493,6 +494,10 @@ const s = stylex.create({
       [MOBILE]: "20px",
     },
     color: "#7B8390",
+    marginTop: {
+      default: "0px",
+      [MOBILE]: "60px",
+    },
   },
 
   sectionDescriptionMobileEnd: {
