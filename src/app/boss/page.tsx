@@ -7,6 +7,10 @@ import section1_yam from "@/../public/images/boss/boss_section1_yam.png";
 import section2_food from "@/../public/images/boss/boss_section2_food.png";
 import section2_child from "@/../public/images/boss/boss_section2_child.png";
 import boss_yam from "@/../public/images/boss/boss_yam.png";
+import banner1 from "@/../public/images/boss/banner1.png";
+import banner2 from "@/../public/images/boss/banner2.png";
+import banner3 from "@/../public/images/boss/banner3.png";
+import banner4 from "@/../public/images/boss/banner4.png";
 
 import Image from "next/image";
 import BossInstaSlider from "./slider/bossInstaSlider";
@@ -101,7 +105,7 @@ const page = () => {
                 <br />
                 <br /> 외부 후원금 및 <br /> 나비얌 사용자 간의 기부에서 오는
                 <br />
-                추가적인 수익도 챙겨가세요
+                추가적인 수익도 챙겨가세요.
               </p>
             </div>
           </motion.div>
@@ -121,7 +125,7 @@ const page = () => {
                 <strong {...stylex.props(s.strongYellowText)}>
                   기부금 영수증
                 </strong>
-                을 발행할 수 있습니다.
+                을 발행할 수 있어요.
               </p>
             </div>
           </motion.div>
@@ -166,7 +170,7 @@ const page = () => {
 
               <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
                 강서구 소재 도시락 가게는 30명의 <br /> 보육원 단체주문을
-                정기적으로 <br /> 받고 있습니다.
+                정기적으로 <br /> 받고 있어요.
               </p>
             </div>
           </div>
@@ -198,6 +202,18 @@ const page = () => {
                 <br />
                 대신 해드려요.
               </p>
+              <div {...stylex.props(s.bannerImageContainer)}>
+                <Image
+                  src={banner1}
+                  alt="가게등록 편의"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                    marginTop: "20px",
+                    right: -30,
+                  }}
+                />
+              </div>
             </div>
             <div {...stylex.props(s.solutionCard)}>
               <p {...stylex.props(s.solutionCardTitle)}>
@@ -208,19 +224,48 @@ const page = () => {
               <p {...stylex.props(s.solutionCardSubTitle)}>
                 (은행 PG사 결제 수수료 <br /> 1.9%만 발생합니다)
               </p>
+              <div {...stylex.props(s.bannerImageContainer)}>
+                <Image
+                  src={banner2}
+                  alt="수수료 없는 나비얌"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
             </div>
             <div {...stylex.props(s.solutionCard)}>
               <p {...stylex.props(s.solutionCardTitle)}>
                 사장님 앱에서 <br />
                 편하게 <br /> 가게 관리 <br />
               </p>
+              <div {...stylex.props(s.bannerImageContainer)}>
+                <Image
+                  src={banner3}
+                  alt="나비사장님 앱에서 편하게 가게관리 하세요"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
             </div>
             <div {...stylex.props(s.solutionCard)}>
               <p {...stylex.props(s.solutionCardTitle)}>
-                주문 접수도
-                <br />
-                쉬워요.
+                식사 나눔 시, <br />
+                기부금영수증 발행
               </p>
+              <div {...stylex.props(s.bannerImageContainer)}>
+                <Image
+                  src={banner4}
+                  alt="식사 나눔 시, 기부금영수증 발행"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </motion.div>
@@ -261,7 +306,12 @@ const page = () => {
             </a>
           </div>
           <div {...stylex.props(s.bossyamContainer)}>
-            <Image src={boss_yam} fill alt="사장님을 위한 혜택을 챙겨가세요" />
+            <Image
+              src={boss_yam}
+              fill
+              alt="사장님을 위한 혜택을 챙겨가세요"
+              style={{ objectFit: "contain" }}
+            />
           </div>
         </div>
       </div>
@@ -275,7 +325,7 @@ const page = () => {
         }}
       >
         <div {...stylex.props(s.faqContainer)}>
-          <p {...stylex.props(s.faqHeaderP)}>자주 묻는 질문</p>
+          <p {...stylex.props(s.faqHeaderP)}>자주 물어보시는 질문</p>
           <FAQ
             title="입점 시 해야하는 절차가 따로 있나요?"
             desc="아닙니다. 입점 희망을 밝혀주신 후 가게 기본 정보만 남겨주시면 가게 등록, 메뉴 등록 전부 저희가 도와드립니다. 또한 포장/현장 중심 식사 어플리케이션이기 때문에 따로 포스기나 어플 설치 없이 '기프티콘 사용하기' 버튼만 현장에서 잘 눌러주시면 영업일 기준 5일 이내 자동으로 정산이 완료됩니다."
@@ -313,13 +363,19 @@ const page = () => {
 export default page;
 
 const s = stylex.create({
+  bannerImageContainer: {
+    position: "relative",
+    width: "100%",
+    height: "60%",
+  },
   faqHeaderP: {
     color: "black",
     fontWeight: "bold",
     fontSize: {
-      default: "60px",
+      default: "50px",
       [MOBILE]: "30px",
     },
+    marginBottom: "30px",
   },
   faqContainer: {
     width: {
@@ -743,13 +799,13 @@ const s = stylex.create({
     backgroundColor: "#EEEFF4",
     display: "flex",
     flexDirection: "column",
-    paddingLeft: "20px",
     paddingTop: "20px",
     borderRadius: "20px",
+    justifyContent: "space-between",
   },
   solutionCardTitle: {
     color: "#3C3C32",
-
+    paddingLeft: "20px",
     fontWeight: "700",
     fontSize: {
       default: "45px",
@@ -757,6 +813,7 @@ const s = stylex.create({
     },
   },
   solutionCardSubTitle: {
+    paddingLeft: "20px",
     color: "#3C3C32",
     fontSize: {
       default: "20px",

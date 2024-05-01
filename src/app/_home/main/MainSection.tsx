@@ -176,7 +176,7 @@ const MainSection = () => {
           <Image
             src={home_desc2}
             fill
-            alt="청년밥상문간은 지난 6년간 결식유려 아동에게 무상으로 식사 나눔을 이어오고 있습니다. 앞으로 더 많은 아이들과 청년들이 편하게 올 수 있도록 나비얌과 함께하게 되었습니다."
+            alt="청년밥상문간은 지난 6년간 결식유려 아동에게 무상으로 식사 나눔을 이어오고 있어요. 앞으로 더 많은 아이들과 청년들이 편하게 올 수 있도록 나비얌과 함께하게 되었어요."
           />
         </motion.div>
         <DescriptionSection.Column>
@@ -202,7 +202,7 @@ const MainSection = () => {
           <DescriptionSection.Description>
             사회 각층의 결식 우려 대상자 뿐 아니라 <br />
             일반유저들도 어플 내에서 각종 혜택을 쌓으며 <br />
-            우리동네 착한가게를 이용 할 수 있습니다.
+            우리동네 착한가게를 이용 할 수 있어요.
           </DescriptionSection.Description>
           <DescriptionSection.ButtonContainer>
             <DescriptionSection.Button>
@@ -271,7 +271,7 @@ const MainSection = () => {
           <DescriptionSection.Description>
             결식우려 아동들에게 할인 해주시는 <br />
             나비식당 사장님들께서는 지원금을 통한 수익창출과 <br /> 나비얌을
-            통한 새로운 홍보채널을 열 수 있습니다.
+            통한 새로운 홍보채널을 열 수 있어요.
           </DescriptionSection.Description>
           <DescriptionSection.ButtonContainer>
             <DescriptionSection.Button>나비식당 보기</DescriptionSection.Button>
@@ -292,7 +292,7 @@ const MainSection = () => {
           <DescriptionSection.Description>
             전국 약 1,700곳의 선한영향력가게 <br />
             사장님들께서 나비얌 앱에 들어오셔서,
-            <br /> 보다 편하게 가게를 방문하실 수 있습니다.
+            <br /> 보다 편하게 가게를 방문하실 수 있어요.
           </DescriptionSection.Description>
         </DescriptionSection.Column>
         <motion.div
