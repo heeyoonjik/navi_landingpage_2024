@@ -104,11 +104,13 @@ const s = stylex.create({
   },
 
   sectionTitleUnderLine: {
+    wordBreak: "keep-all",
     position: "relative",
     fontSize: {
       default: "50px",
       "@media (max-width: 860px)": "35px",
     },
+    textAlign: "center",
     color: "#3C3C32",
     fontWeight: "700",
     zIndex: "1",
@@ -164,6 +166,18 @@ const s = stylex.create({
       "@media (max-width: 860px)": "138px",
     },
   },
+
+  logoImg: {
+    position: "relative",
+    width: {
+      default: "160px",
+      "@media (max-width: 860px)": "74px",
+    },
+    height: {
+      default: "120px",
+      "@media (max-width: 860px)": "92px",
+    },
+  },
 });
 
 const BossInstaSlider = () => {
@@ -182,10 +196,7 @@ const BossInstaSlider = () => {
         <p {...stylex.props(s.sectionTitleUnderLine)}>
           전국 4500곳 넘는 가게와 프렌차이즈가
         </p>
-        <p {...stylex.props(s.sectionTitle)}>
-          <br {...stylex.props(s.mobileVisible)} />
-          나비얌과 함게합니다
-        </p>
+        <p {...stylex.props(s.sectionTitle)}>나비얌과 함게합니다</p>
 
         <div
           style={{
@@ -195,34 +206,28 @@ const BossInstaSlider = () => {
             gap: "20px",
           }}
         >
-          <div
-            style={{ position: "relative", width: "160px", height: "120px" }}
-          >
+          <div {...stylex.props(s.logoImg)}>
             <Image
               src={yooganelogo}
               alt="유가네 로고"
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain" }}
             />
           </div>
-          <div
-            style={{ position: "relative", width: "160px", height: "120px" }}
-          >
+          <div {...stylex.props(s.logoImg)}>
             <Image
               src={youthlogo}
               alt="청년문간밥상 로고"
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain" }}
             />
           </div>
-          <div
-            style={{ position: "relative", width: "160px", height: "120px" }}
-          >
+          <div {...stylex.props(s.logoImg)}>
             <Image
               src={tokyologo}
               alt="도쿄스테이크 로고"
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain" }}
             />
           </div>
         </div>

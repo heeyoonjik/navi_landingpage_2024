@@ -51,6 +51,7 @@ const s = stylex.create({
   container: {
     display: "flex",
     flexDirection: "column",
+
     width: "100%",
     justifyContent: "flex-start",
     paddingBottom: "40px",
@@ -60,6 +61,7 @@ const s = stylex.create({
 
   titleContainer: {
     display: "flex",
+    width: "100%",
     alignItems: "center",
     justifyContent: "space-between",
   },
@@ -76,8 +78,9 @@ const s = stylex.create({
     fontWeight: "600",
     fontSize: {
       default: "25px",
-      [MOBILE]: "10px",
+      [MOBILE]: "18px",
     },
+    wordBreak: "keep-all",
   },
 
   descP: {
@@ -85,7 +88,8 @@ const s = stylex.create({
     color: "black",
     fontSize: {
       default: "25px",
-      [MOBILE]: "10px",
+      [MOBILE]: "18px",
     },
+    wordBreak: "keep-all",
   },
 });
