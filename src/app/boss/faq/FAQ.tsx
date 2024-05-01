@@ -72,7 +72,7 @@ const s = stylex.create({
     transform: "rotate( 45deg )",
   },
   titleP: {
-    color: "black",
+    color: "#3C3C32",
     fontWeight: "600",
     fontSize: {
       default: "25px",
