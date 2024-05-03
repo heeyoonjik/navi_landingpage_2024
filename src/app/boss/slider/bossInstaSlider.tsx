@@ -9,6 +9,11 @@ import { motion } from "framer-motion";
 import yooganelogo from "@/../public/images/boss/insta/yooganelogo.png";
 import youthlogo from "@/../public/images/boss/insta/youthlogo.png";
 import tokyologo from "@/../public/images/boss/insta/tokyologo.jpg";
+import dosiraklogo from "@/../public/images/boss/insta/dosiraklogo.jpg";
+import hwapyeongdonglogo from "@/../public/images/boss/insta/hwapyeongdonglogo.png";
+import noodletreelogo from "@/../public/images/boss/insta/noodletreelogo.png";
+import goodlogo from "@/../public/images/boss/insta/goodlogo.jpg";
+import mirilogo from "@/../public/images/boss/insta/mirilogo.png";
 
 const fadeInPopUp = {
   hidden: { opacity: 0, y: 70 },
@@ -68,6 +73,7 @@ const s = stylex.create({
     display: "flex",
     alignItems: "center",
     overflowX: "hidden",
+    overflowY: "hidden",
     flexWrap: "nowrap",
   },
 
@@ -95,6 +101,7 @@ const s = stylex.create({
   },
 
   sectionTitle: {
+    textAlign: "center",
     fontSize: {
       default: "50px",
       "@media (max-width: 860px)": "35px",
@@ -104,6 +111,10 @@ const s = stylex.create({
   },
 
   sectionTitleUnderLine: {
+    marginTop: {
+      default: "200px",
+      "@media (max-width: 860px)": "50px",
+    },
     wordBreak: "keep-all",
     position: "relative",
     fontSize: {
@@ -128,10 +139,11 @@ const s = stylex.create({
   },
 
   sliderTotalContainer: {
+    paddingTop: "20px",
     width: "100vw",
     height: {
       default: "700px",
-      "@media (max-width: 860px)": "300px",
+      "@media (max-width: 860px)": "400px",
     },
     display: "flex",
     flexDirection: "column",
@@ -178,6 +190,17 @@ const s = stylex.create({
       "@media (max-width: 860px)": "92px",
     },
   },
+
+  viral: {
+    color: "#7B8390",
+    fontSize: {
+      default: "30px",
+      "@media (max-width: 860px)": "15px",
+    },
+    textAlign: "center",
+    marginTop: "20px",
+    paddingBottom: "20px",
+  },
 });
 
 const BossInstaSlider = () => {
@@ -194,7 +217,50 @@ const BossInstaSlider = () => {
         }}
       >
         <p {...stylex.props(s.sectionTitleUnderLine)}>
-          전국 4500곳 넘는 가게와 프렌차이즈가
+          기존 오프라인에서 이루어지던 식사나눔,
+        </p>
+        <p {...stylex.props(s.sectionTitle)}>나비얌에서 더 편하게 관리하세요</p>
+
+        <div
+          style={{
+            display: "flex",
+            marginTop: "40px",
+            marginBottom: "20px",
+            gap: "20px",
+            width: "80vw",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div {...stylex.props(s.logoImg)}>
+            <Image
+              src={youthlogo}
+              alt="청년밥상문간은 나비얌과 함께합니다. 나비얌의 기술지원을 통해 청년밥상문간에서 편한 식사지원 관리 시스템을 이용중입니다."
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+          <div {...stylex.props(s.logoImg)}>
+            <Image
+              src={goodlogo}
+              alt="선한영향력가게는 나비얌과 함께합니다. 나비얌을 통해 기존의 불편했던 결식아동 나눔시스템을 혁신하였고, 더 많은 사장님들이 부담없이 원하는 만큼만 결식아이들에게 후원할 수 있도록 기술지원을 하고 있습니다."
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+          <div {...stylex.props(s.logoImg)}>
+            <Image
+              src={mirilogo}
+              alt="미리내운동은 나비얌과 함께합니다. 나비얌을 통해 미리내운동이 퍼지도록 돕고있습니다. 미리내운동이 온라인화된 나비얌에서 이웃을 위해 식사를 쿠폰 형식으로 기부할 수 있습니다. 식사권 선물 또한 가능합니다."
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+        </div>
+
+        <p {...stylex.props(s.sectionTitleUnderLine)}>
+          전국 4500곳 넘는 가게와 프랜차이즈가
         </p>
         <p {...stylex.props(s.sectionTitle)}>나비얌과 함게합니다</p>
 
@@ -204,6 +270,10 @@ const BossInstaSlider = () => {
             marginTop: "40px",
             marginBottom: "20px",
             gap: "20px",
+            width: "80vw",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <div {...stylex.props(s.logoImg)}>
@@ -216,16 +286,32 @@ const BossInstaSlider = () => {
           </div>
           <div {...stylex.props(s.logoImg)}>
             <Image
-              src={youthlogo}
-              alt="청년문간밥상 로고"
+              src={tokyologo}
+              alt="도쿄스테이크 로고"
               fill
               style={{ objectFit: "contain" }}
             />
           </div>
           <div {...stylex.props(s.logoImg)}>
             <Image
-              src={tokyologo}
-              alt="도쿄스테이크 로고"
+              src={noodletreelogo}
+              alt="국수나무 로고"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+          <div {...stylex.props(s.logoImg)}>
+            <Image
+              src={hwapyeongdonglogo}
+              alt="화평동왕냉면 로고"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+          <div {...stylex.props(s.logoImg)}>
+            <Image
+              src={dosiraklogo}
+              alt="행복도시락 사회적협동조합 로고"
               fill
               style={{ objectFit: "contain" }}
             />
@@ -266,6 +352,10 @@ const BossInstaSlider = () => {
               ))}
             </div>
           </div>
+          <p {...stylex.props(s.viral)}>
+            나비얌 가게는 각종 SNS와 블로그에 착한 가게로 소개됩니다. <br />
+            순차적으로 콘텐츠를 만들어드려요
+          </p>
         </div>
       </motion.div>
     </div>

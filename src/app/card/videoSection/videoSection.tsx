@@ -5,6 +5,8 @@ import Image from "next/image";
 import CardIntroMock from "@/assets/png/cardIntroMock.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import cardIntro1 from "@/../public/images/card/card_intro_1.png";
+import cardIntro3 from "@/../public/images/card/card_intro_3.png";
+
 import cardIntro4 from "@/../public/images/card/card_intro_4.png";
 
 const fadeInPopUp = {
@@ -99,6 +101,7 @@ const s = stylex.create({
   },
 
   videoContainer: {
+    position: "relative",
     borderRadius: "20px",
     boxShadow: "0px 4px 30px 0px rgba(0, 0, 0, 0.10)",
     width: {
@@ -158,6 +161,7 @@ const s = stylex.create({
 
   introImageContainer: {
     borderRadius: "20px",
+    objectFit: "cover",
   },
 });
 
@@ -223,6 +227,7 @@ const VideoSection = () => {
             <Image
               src={cardIntro1}
               alt="급식카드 온라인 인증 화면"
+              fill
               {...stylex.props(s.introImageContainer)}
             />
           </motion.div>
@@ -248,7 +253,7 @@ const VideoSection = () => {
 
         <div {...stylex.props(s.cardContainer("row"))}>
           <div {...stylex.props(s.videoContainer)}>
-            <Image src={cardIntro1} alt="급식카드 온라인 인증 화면" />
+            <Image src={cardIntro3} alt="급식카드 온라인 인증 화면" fill />
           </div>
           <motion.div
             initial="hidden"
@@ -302,6 +307,7 @@ const VideoSection = () => {
           <div {...stylex.props(s.videoContainer)}>
             <Image
               src={cardIntro4}
+              fill
               alt="급식카드 온라인 인증 화면"
               {...stylex.props(s.introImageContainer)}
             />

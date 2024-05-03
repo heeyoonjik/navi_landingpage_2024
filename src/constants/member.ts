@@ -26,7 +26,7 @@ export const members: MemberType[] = [
     description: "프로덕트 리더",
   },
   {
-    role: "Designer & Marketer",
+    role: "Designer &Marketer",
     name: "양새봄",
     description: "디자인&마케팅",
   },
