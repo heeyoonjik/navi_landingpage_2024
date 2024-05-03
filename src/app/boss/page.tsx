@@ -92,6 +92,14 @@ const page = () => {
               </div>
             </div>
             <div {...stylex.props(s.columnRight)}>
+              <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
+                {`>`} 사용되지 못하고 남는 <br />
+                급식카드 예산에서 수익을 창출하세요.
+                <br />
+                <br /> 외부 후원금 및 <br /> 나비얌 사용자 간의 기부에서 오는
+                <br />
+                추가적인 수익도 챙겨가세요.
+              </p>
               <div {...stylex.props(s.yamContainer)}>
                 <Image
                   src={section1_yam}
@@ -99,14 +107,6 @@ const page = () => {
                   alt="돈쭐내러 오는 소비자들이 찾아 방문합니다."
                 />
               </div>
-              <p {...stylex.props(s.sectionDescriptionMobileEnd, s.marginTop)}>
-                사용되지 못하고 남는 <br />
-                급식카드 예산에서 수익을 창출하세요.
-                <br />
-                <br /> 외부 후원금 및 <br /> 나비얌 사용자 간의 기부에서 오는
-                <br />
-                추가적인 수익도 챙겨가세요.
-              </p>
             </div>
           </motion.div>
           <motion.div
@@ -294,27 +294,27 @@ const page = () => {
           </div>
         </motion.div>
       </div>
-      <div {...stylex.props(s.CTAOuterContainer)}>
-        <div {...stylex.props(s.CTAContainer)}>
-          <div {...stylex.props(s.CTAMobileUpper)}>
-            <p {...stylex.props(s.CTAParagraph)}>
-              <strong>온기를 요리</strong>하는 <br />
-              사장님을 위한 <strong>혜택을 챙겨가세요</strong>
-            </p>
-            <a href="https://forms.gle/cE7u1AUgEfm6GhLWA" target="_blank">
+      <a href="https://forms.gle/cE7u1AUgEfm6GhLWA" target="_blank">
+        <div {...stylex.props(s.CTAOuterContainer)}>
+          <div {...stylex.props(s.CTAContainer)}>
+            <div {...stylex.props(s.CTAMobileUpper)}>
+              <p {...stylex.props(s.CTAParagraph)}>
+                <strong>온기를 요리</strong>하는 <br />
+                사장님을 위한 <strong>혜택을 챙겨가세요</strong>
+              </p>
               <div {...stylex.props(s.CTAButton)}>입점 문의</div>
-            </a>
-          </div>
-          <div {...stylex.props(s.bossyamContainer)}>
-            <Image
-              src={boss_yam}
-              fill
-              alt="사장님을 위한 혜택을 챙겨가세요"
-              style={{ objectFit: "contain" }}
-            />
+            </div>
+            <div {...stylex.props(s.bossyamContainer)}>
+              <Image
+                src={boss_yam}
+                fill
+                alt="사장님을 위한 혜택을 챙겨가세요"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </a>
 
       <div
         style={{
@@ -460,8 +460,8 @@ const s = stylex.create({
   sectionTitle: {
     position: "relative",
     fontSize: {
-      default: "50px",
-      [MOBILE]: "35px",
+      default: "80px",
+      [MOBILE]: "40px",
     },
     color: "#3C3C32",
     fontWeight: "700",
@@ -469,8 +469,8 @@ const s = stylex.create({
   sectionTitleUnderLine: {
     position: "relative",
     fontSize: {
-      default: "50px",
-      [MOBILE]: "35px",
+      default: "80px",
+      [MOBILE]: "40px",
     },
     color: "#3C3C32",
     fontWeight: "700",
@@ -493,7 +493,9 @@ const s = stylex.create({
       default: "26px",
       [MOBILE]: "20px",
     },
-    color: "#7B8390",
+    wordBreak: "keep-all",
+    color: "#3C3C32",
+    fontWeight: 700,
     marginTop: {
       default: "0px",
       [MOBILE]: "60px",
@@ -516,12 +518,16 @@ const s = stylex.create({
       default: "start",
       [MOBILE]: "end",
     },
-    color: "#7B8390",
+    color: "#5A6679",
   },
   marginTop: {
     marginTop: "25px",
   },
   section1row: {
+    marginTop: {
+      default: "50px",
+      [MOBILE]: "20px",
+    },
     width: "100%",
     display: "flex",
     alignItems: "flex-start",
@@ -573,6 +579,10 @@ const s = stylex.create({
   }),
 
   yamContainer: {
+    marginTop: {
+      default: "30px",
+      [MOBILE]: "20px",
+    },
     position: "relative",
     width: {
       default: "397px",
@@ -827,12 +837,18 @@ const s = stylex.create({
     fontWeight: "700",
   },
   solutionCardParagraph: {
-    color: "#7B8390",
+    color: "#5A6679",
     fontSize: "20px",
     fontWeight: "700",
   },
 
   strongYellowText: {
-    color: "#FFD023",
+    color: "#FFC900",
+    backgroundColor: "black",
+    marginBottom: "10px",
+    fontSize: {
+      default: "50px",
+      [MOBILE]: "30px",
+    },
   },
 });

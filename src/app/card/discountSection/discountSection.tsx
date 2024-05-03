@@ -218,8 +218,8 @@ const DiscountSection = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.6 }}
         transition={{
-          duration: 1,
-          ease: "easeInOut",
+          duration: 0.3,
+          ease: "circOut",
         }}
         whileInView={{
           opacity: 1,

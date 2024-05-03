@@ -4,7 +4,7 @@ import stylex from "@stylexjs/stylex";
 import { history } from "@/constants/history";
 import Image from "next/image";
 import { members } from "@/constants/member";
-import groupPhoto from "@/../public/images/team/groupPhoto.jpeg";
+import groupPhoto from "@/../public/images/team/groupPhoto.png";
 import { useScroll, useTransform } from "framer-motion";
 import Partner from "../_home/partner/Partner";
 
@@ -17,6 +17,8 @@ import mou5 from "@/../public/images/team/mou5.jpg";
 import press1 from "@/../public/images/team/press1.png";
 import press2 from "@/../public/images/team/press2.png";
 import press3 from "@/../public/images/team/press3.png";
+
+import certification from "@/../public/images/team/certification.png";
 
 import NewsItem from "./newsBlock/NewsItem";
 import MainNewsItem from "./newsBlock/MainNewsItem";
@@ -124,29 +126,40 @@ const s = stylex.create({
   memberRowContainer: {
     display: "flex",
     alignItems: "center",
-    gap: "50px",
   },
   memberBoldParagraph: {
+    width: {
+      default: "100px",
+      [MOBILE]: "13px",
+    },
     color: "#3C3C32",
     fontSize: {
-      default: "35px",
-      [MOBILE]: "15px",
+      default: "20px",
+      [MOBILE]: "13px",
     },
     fontWeight: "bold",
     wordBreak: "keep-all",
   },
 
   memberLightParagraph: {
+    wordBreak: "keep-all",
     color: "#3C3C32",
     fontSize: {
-      default: "35px",
-      [MOBILE]: "15px",
+      default: "20px",
+      [MOBILE]: "13px",
     },
   },
 
   memberDivider: {
     color: "#FFC000",
-    fontSize: "35px",
+    display: {
+      default: "block",
+      [MOBILE]: "none",
+    },
+    fontSize: {
+      default: "30px",
+      [MOBILE]: "10px",
+    },
     fontWeight: "bold",
   },
 
@@ -207,8 +220,17 @@ const s = stylex.create({
 
   memberBodyRow: {
     display: "flex",
-    alignItems: "center",
+
+    alignItems: {
+      default: "center",
+      [MOBILE]: "flex-start",
+    },
+
     gap: "10px",
+    flexDirection: {
+      default: "row",
+      [MOBILE]: "column-reverse",
+    },
   },
 
   memberContainer: {
@@ -257,12 +279,12 @@ const s = stylex.create({
   teamIcon: {
     position: "relative",
     width: {
-      default: "271px",
-      [MOBILE]: "100px",
+      default: "150px",
+      [MOBILE]: "80px",
     },
     height: {
-      default: "271px",
-      [MOBILE]: "100px",
+      default: "150px",
+      [MOBILE]: "80px",
     },
   },
 
@@ -270,11 +292,44 @@ const s = stylex.create({
     position: "relative",
     width: {
       default: "843px",
-      [MOBILE]: "398px",
+      [MOBILE]: "80vw",
     },
-    hight: {
+    height: {
       default: "562px",
-      [MOBILE]: "265px",
+      [MOBILE]: "40vh",
+    },
+    marginTop: {
+      default: "0px",
+      [MOBILE]: "-40px",
+    },
+    marginBottom: {
+      default: "0px",
+      [MOBILE]: "-40px",
+    },
+  },
+
+  certificationContainer: {
+    position: "relative",
+    width: "80vw",
+    height: {
+      default: "50vh",
+      [MOBILE]: "20vh",
+    },
+    marginTop: {
+      default: "0px",
+      [MOBILE]: "-40px",
+    },
+  },
+
+  certification: {
+    objectFit: "contain",
+  },
+  teamGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    columnGap: {
+      default: "30px",
+      [MOBILE]: "0px",
     },
   },
 });
@@ -313,6 +368,18 @@ const Team = () => {
         <Partner />
       </div>
 
+      <h1 {...stylex.props(s.heading)}>
+        다양한 인증취득을 통해 공신력을 높여가고 있습니다
+      </h1>
+
+      <div {...stylex.props(s.certificationContainer)}>
+        <Image
+          src={certification}
+          alt="벤처기업, 소셜벤처, 예비사회적기업, 여성기업을 인증받은 나비얌은 공신력을 높여가고 있습니다"
+          fill
+          {...stylex.props(s.certification)}
+        />
+      </div>
       <h1 {...stylex.props(s.heading)}>
         다양한 기업들과 함께 <br /> CSR를 활동을 진행하고 있습니다
       </h1>
@@ -410,10 +477,15 @@ const Team = () => {
       <div {...stylex.props(s.memberListContainer)}>
         <p {...stylex.props(s.paragraph)}>팀원 소개</p>
         <div {...stylex.props(s.teamImg)}>
-          <Image src={groupPhoto} alt="나비팀 단체사진" fill />
+          <Image
+            src={groupPhoto}
+            alt="나비팀 단체사진"
+            fill
+            style={{ objectFit: "contain" }}
+          />
         </div>
 
-        <div>
+        <div {...stylex.props(s.teamGrid)}>
           {members.map((member) => (
             <div key={member.name} {...stylex.props(s.memberRowContainer)}>
               <div {...stylex.props(s.teamIcon)}>
@@ -421,7 +493,7 @@ const Team = () => {
                   src={`/images/team/${member.name}.png`}
                   alt={member.name}
                   fill
-                  style={{ objectFit: "contain" }}
+                  style={{ objectFit: "cover" }}
                 />
               </div>
 
