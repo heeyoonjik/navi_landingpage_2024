@@ -325,7 +325,7 @@ const VideoSection = () => {
               드시고 싶을 때 <br /> 사장님께 보여드리세요
             </h3>
             <p {...stylex.props(s.description("end"))}>
-              급식카드 대신 키프티콘만 보여드리세요
+              급식카드 대신 기프티콘만 보여드리세요
             </p>
           </motion.div>
         </div>
