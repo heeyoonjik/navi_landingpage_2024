@@ -226,8 +226,9 @@ const Footer = () => {
               (주) 나눔비타민 <br /> <br />
               사업자등록번호 672-88-02761 <br />
               대표자 · 개인정보보호책임자 김하연 <br />
-              서울특별시 관악구 신림로 134, 398호(신림동, 창업히어로4) <br />
-              전화번호 070-8028-2476 I 메일 nanumnavi@gmail.com <br />
+              서울 마포구 마포대로 122, (공덕동, 신용보증기금빌딩) 13층
+              <br />
+              전화번호 070-4006-1389 I 메일 nanumnavi@gmail.com <br />
               <br />
             </p>
             <div {...stylex.props(s.personInfoContainer)}>
