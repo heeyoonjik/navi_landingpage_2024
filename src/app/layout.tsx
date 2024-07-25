@@ -4,21 +4,14 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("https://www.nanumnavi.com"),
   title: "나비얌",
   description: "우리 동네 착한 가게와 함께하는 따뜻한 식사 플랫폼",
   openGraph: {
     title: "나비얌",
     description: "우리 동네 착한 가게와 함께하는 따뜻한 식사 플랫폼",
-    url: "https://www.nanumnavi.com/",
+    url: "https://www.nanumnavi.com",
     siteName: "/sitemap.xml",
-    images: [
-      {
-        url: "/ogImage.png",
-        width: 1000,
-        height: 500,
-      },
-    ],
     locale: "ko_KR",
     type: "website",
   },
