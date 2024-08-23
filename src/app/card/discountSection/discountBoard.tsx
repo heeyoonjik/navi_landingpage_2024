@@ -287,7 +287,7 @@ const DiscountBoard = () => {
         </div>
         <div {...stylex.props(s.firstChildParagraphContainer)}>
           <p {...stylex.props(s.paragraph("#3C3C32"))}>
-            첫 주문 전매뉴 <br />
+            첫 주문 전메뉴 <br />
             <strong>50% 할인</strong>
           </p>
         </div>
