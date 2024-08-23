@@ -262,7 +262,7 @@ const BossInstaSlider = () => {
         <p {...stylex.props(s.sectionTitleUnderLine)}>
           전국 4500곳 넘는 가게와 프랜차이즈가
         </p>
-        <p {...stylex.props(s.sectionTitle)}>나비얌과 함게합니다</p>
+        <p {...stylex.props(s.sectionTitle)}>나비얌과 함께합니다</p>
 
         <div
           style={{

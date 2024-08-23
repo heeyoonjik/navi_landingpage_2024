@@ -381,7 +381,7 @@ const Team = () => {
         />
       </div>
       <h1 {...stylex.props(s.heading)}>
-        다양한 기업들과 함께 <br /> CSR를 활동을 진행하고 있습니다
+        다양한 기업들과 함께 <br /> CSR 활동을 진행하고 있습니다
       </h1>
       <div {...stylex.props(s.MainNewsContainer)}>
         <MainNewsItem
